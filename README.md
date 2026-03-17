@@ -10,6 +10,7 @@
 - **A1**: 神经网络文本分类
   - 使用神经网络进行文本分类任务
   - 数据集：train.jsonl, test.jsonl
+  - 产出：模型权重、实验报告与提交材料
 
 ### 🧪 实验课 (Lab)
 - **Lab 1**: Python基础文本处理
@@ -24,6 +25,11 @@
   - 情感分析任务（SST2数据集）
   - 神经网络模型训练与评估
 
+- **Lab 3**: Word2Vec词向量训练与应用
+  - 使用语料进行词向量训练
+  - 词向量文件加载与相似度分析
+  - 基于《论语》语料的分布式表示实验
+
 ### 📖 课程讲义 (Lecture)
 - 基础文本处理相关讲义
 
@@ -32,6 +38,7 @@
 - **Python 3.x**
 - **PyTorch** - 深度学习框架
 - **torchtext** - 文本处理库
+- **Gensim** - Word2Vec与词向量训练
 - **Hugging Face datasets** - 数据集加载
 - **正则表达式 (re)** - 文本处理
 
@@ -44,7 +51,7 @@
 .\venv\Scripts\Activate.ps1
 
 # 安装必要的包
-pip install torch torchtext datasets
+pip install torch torchtext datasets gensim
 ```
 
 ## 📂 目录结构
@@ -53,17 +60,29 @@ pip install torch torchtext datasets
 CS310-Natural-Language-Processing/
 ├── coding assignment/
 │   └── A1/
+│       ├── A1 report.md
 │       ├── A1_nn.ipynb
+│       ├── best_advanced_model.pth
 │       ├── train.jsonl
-│       └── test.jsonl
+│       ├── test.jsonl
+│       └── submit_material/
+│           └── A1_nn.ipynb
 ├── lab/
-│   ├── lab1_text_processing.ipynb
-│   ├── lab2_nn.ipynb
-│   ├── data_utils.py
-│   ├── text_classification_model.pth
-│   └── 三体3死神永生-刘慈欣.txt
+│   ├── lab1/
+│   │   ├── lab1_text_processing.ipynb
+│   │   ├── text_classification_model.pth
+│   │   └── 三体3死神永生-刘慈欣.txt
+│   ├── lab2/
+│   │   ├── data_utils.py
+│   │   └── lab2_nn.ipynb
+│   └── lab3/
+│       ├── lab3_w2v.ipynb
+│       ├── embeddings.txt
+│       ├── lunyu_20chapters.txt
+│       └── utils.py
 ├── lecture/
 │   └── 01-basic_text_proc.pdf
+├── README_MAINTENANCE.md
 └── README.md
 ```
 
@@ -83,6 +102,7 @@ CS310-Natural-Language-Processing/
 
 ## 📅 更新日志
 
+- **2026-03-17**: 同步仓库最新结构，补充Lab 3内容，更新技术栈与目录说明
 - **2026-03-10**: 初始化README，包含Lab 1, Lab 2和Assignment 1的内容
 
 ## 📄 License
@@ -98,4 +118,4 @@ CS310-Natural-Language-Processing/
 ---
 
 **SUSTech CS310 - Natural Language Processing**  
-*Last Updated: 2026年3月10日*
+*Last Updated: 2026年3月17日*
