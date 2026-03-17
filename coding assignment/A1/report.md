@@ -1,84 +1,101 @@
-# CS310 NLP Assignment 1 Report
+# CS310 NLP Assignment 1 实验报告
 
-## 1. 实验设置
+## 1. 实验任务与文件说明
 
-- 任务: 中文幽默检测二分类
-- 数据来源: CLEVA 幽默检测数据集
-- 代码文件: [coding assignment/A1/A1_nn.ipynb](coding%20assignment/A1/A1_nn.ipynb)
-- 随机种子: 310
-- 运行设备: CPU
+本实验任务为中文幽默检测二分类，目标是判断句子是否具有幽默性（标签 0/1）。
 
-数据划分:
+本报告结合以下 3 个文件完成：
 
-- 训练集: 12677
-- 验证集: 1267 (由训练集按 10% 划分)
-- 测试集: 651
+1. `A1_nn.ipynb`：完整实验代码（数据处理、建模、训练、评估）
+2. `train.jsonl`：训练数据
+3. `test.jsonl`：测试数据
 
-## 2. 模型参数
+实验环境与固定设置：
 
-模型结构为 EmbeddingBag + 多层全连接分类器。
+- 框架：PyTorch
+- 随机种子：310
+- 设备：CPU
 
-超参数:
+数据规模：
 
-- num_classes: 2
-- embed_dim: 128
-- hidden_dims: (128, 64)
-- dropout: 0.25
-- learning_rate: 0.001
-- epochs: 10
-- optimizer: Adam
-- loss: CrossEntropyLoss
+- 训练集：12677
+- 验证集：1267（由训练集按 10% 划分）
+- 测试集：651
 
-模型规模:
+## 2. 实验过程
 
-- 可训练参数总量: 965058
+### 2.1 数据读取与预处理
 
-## 3. 分词与词表
+- 从 `train.jsonl`、`test.jsonl` 逐行读取样本。
+- 每条样本保留字段：`sentence`、`label`、`id`。
+- 标签处理方式：取 `label[0]` 并转为整数。
 
-你当前 notebook 中比较了两种 tokenizer:
+### 2.2 两种分词方案设计
 
-1. basic_char
-- 规则: 仅保留中文单字，丢弃英文、数字、标点
-- 词表大小: 2687
+为满足作业中“比较至少两种 tokenizer”的要求，实验实现了两套方案：
 
-2. advanced
-- 规则: 正则拆分 + 中文短语词典最大匹配（phrase lexicon）
-- 词表大小: 7345
+1. `basic_char`
+- 仅保留中文字符，按单字切分。
+- 丢弃英文、数字和标点。
 
-## 4. 测试集结果
+2. `advanced`
+- 使用正则先切分出英文串、数字串、中文串和标点。
+- 对中文串再使用“短语词典 + 最大匹配”做进一步分词。
+- 短语词典来自训练集统计，设置 `min_freq=8`，`max_word_len=4`。
 
-| tokenizer | accuracy | precision | recall | f1 | tp | tn | fp | fn |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| basic_char | 0.7312 | 0.4706 | 0.2353 | 0.3137 | 40 | 436 | 45 | 130 |
-| advanced | 0.7066 | 0.4305 | 0.3824 | 0.4050 | 65 | 395 | 86 | 105 |
+词表构建结果：
 
-当前保存的最佳模型（按 F1）:
+- `basic_char` 词表大小：2687
+- `advanced` 词表大小：7345
 
-- best_experiment: advanced
-- checkpoint: [coding assignment/A1/best_advanced_embeddingbag_model.pth](coding%20assignment/A1/best_advanced_embeddingbag_model.pth)
+### 2.3 模型结构
 
-## 5. 结果分析（模型现在怎么样）
+模型采用 `EmbeddingBag + MLP`：
 
-整体表现:
+- Embedding 层：`nn.EmbeddingBag(vocab_size, 128, mode="mean")`
+- 分类头：两层隐藏层全连接网络
+	- `128 -> 128 -> 64 -> 2`
+	- 激活函数：ReLU
+	- Dropout：0.25
 
-- 如果看 accuracy，basic_char 更高（0.7312）
-- 如果看 F1，advanced 更好（0.4050）
+训练参数：
 
-这说明:
+- 损失函数：CrossEntropyLoss
+- 优化器：Adam（学习率 1e-3）
+- 训练轮数：10 epochs
+- 学习率调度：ReduceLROnPlateau（依据验证集 F1）
+- 梯度裁剪：`max_norm=1.0`
 
-- basic_char 更偏向预测多数类，整体正确率高一些，但对正类召回偏低
-- advanced 增强了对复杂模式的建模能力，正类召回提升，F1 更均衡
+参数规模：
 
-从作业要求角度看，你的 notebook 已满足:
+- 可训练参数总量：965058
 
-- 使用了两种 tokenizer，并展示了词表大小变化
-- 模型采用 EmbeddingBag
-- 分类头包含至少 2 个隐藏层
-- 报告了 accuracy / precision / recall / F1
+### 2.4 训练与模型选择策略
 
-## 6. 后续可改进方向（不改变作业核心框架）
+- 在每个 epoch 结束后，在验证集计算 `accuracy / precision / recall / f1`。
+- 使用验证集 F1 最高时的模型参数作为该 tokenizer 的最佳模型。
+- 最终在测试集报告结果，并以测试集 F1 最高者作为本次实验最佳方案。
 
-- 对 advanced tokenizer 调整短语词典阈值（min_freq）与最大词长
-- 在训练中加入轻量 class weight 以提高正类召回
-- 进行 3~5 次不同随机种子重复实验，报告均值与方差，提升结果可信度
-- 在不改模型大框架前提下，尝试更细的学习率调度和早停策略
+## 3. 实验结果
+
+![report result](report%20result.png)
+
+测试集指标如下：
+
+| tokenizer | vocab_size | accuracy | precision | recall | f1 | loss | tp | tn | fp | fn |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| basic_char | 2687 | 0.7312 | 0.4706 | 0.2353 | 0.3137 | 0.5587 | 40 | 436 | 45 | 130 |
+| advanced | 7345 | 0.7066 | 0.4305 | 0.3824 | 0.4050 | 0.6854 | 65 | 395 | 86 | 105 |
+
+最佳模型（按 F1）：
+
+- `advanced`（F1 = 0.4050）
+- 模型权重保存为：`best_advanced_model.pth`
+
+## 4. 结果分析
+
+1. 从 Accuracy 看，`basic_char` 更高（0.7312 > 0.7066）。
+2. 从 F1 看，`advanced` 明显更优（0.4050 > 0.3137）。
+3. `advanced` 的 Recall 更高（0.3824 > 0.2353），说明其对正类（幽默句）识别更充分。
+4. `basic_char` 的策略更保守，负类判定更稳定，因此准确率较高，但漏检正类较多（FN=130）。
+5. 综合 precision 与 recall 的平衡需求，本实验最终选择 `advanced` 作为最佳方案。
