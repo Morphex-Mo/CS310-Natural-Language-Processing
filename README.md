@@ -12,6 +12,12 @@
   - 数据集：train.jsonl, test.jsonl
   - 产出：模型权重、实验报告与提交材料
 
+- **A2**: Word2Vec词向量训练与调优
+  - 基于莎士比亚语料训练词向量
+  - 包含基础版与调优版notebook（`A2_w2v.ipynb`、`A2_w2v_tuned.ipynb`）
+  - 数据与评估：`shakespeare.txt`、`questions-words-shakespeare.csv`、多组embeddings文件
+  - 产出：实验报告与可视化结果
+
 ### 🧪 实验课 (Lab)
 - **Lab 1**: Python基础文本处理
   - 文本清洗与预处理
@@ -30,8 +36,14 @@
   - 词向量文件加载与相似度分析
   - 基于《论语》语料的分布式表示实验
 
+- **Lab 4**: Transformer模型实验
+  - Transformer核心结构实践
+  - 序列建模与实验调参
+  - 配套工具函数与实验notebook
+
 ### 📖 课程讲义 (Lecture)
 - 基础文本处理相关讲义
+- `01-basic_text_proc.pdf`
 
 ## 🛠️ 技术栈
 
@@ -41,6 +53,7 @@
 - **Gensim** - Word2Vec与词向量训练
 - **Hugging Face datasets** - 数据集加载
 - **正则表达式 (re)** - 文本处理
+- **Jupyter Notebook** - 实验记录与结果展示
 
 ## 📋 环境配置
 
@@ -59,14 +72,26 @@ pip install torch torchtext datasets gensim
 ```
 CS310-Natural-Language-Processing/
 ├── coding assignment/
-│   └── A1/
-│       ├── A1 report.md
-│       ├── A1_nn.ipynb
-│       ├── best_advanced_model.pth
-│       ├── train.jsonl
-│       ├── test.jsonl
-│       └── submit_material/
-│           └── A1_nn.ipynb
+│   ├── A1/
+│   │   ├── A1 report.md
+│   │   ├── A1_nn.ipynb
+│   │   ├── best_advanced_model.pth
+│   │   ├── train.jsonl
+│   │   ├── test.jsonl
+│   │   └── submit_material/
+│   │       └── A1_nn.ipynb
+│   └── A2/
+│       ├── A2_w2v.ipynb
+│       ├── A2_w2v_tuned.ipynb
+│       ├── report.md
+│       ├── report.pdf
+│       ├── shakespeare.txt
+│       ├── questions-words-shakespeare.csv
+│       ├── embeddings.txt
+│       ├── embeddings_set1.txt
+│       ├── embeddings_set2_ember.txt
+│       ├── utils.py
+│       └── *.png
 ├── lab/
 │   ├── lab1/
 │   │   ├── lab1_text_processing.ipynb
@@ -75,10 +100,13 @@ CS310-Natural-Language-Processing/
 │   ├── lab2/
 │   │   ├── data_utils.py
 │   │   └── lab2_nn.ipynb
-│   └── lab3/
-│       ├── lab3_w2v.ipynb
-│       ├── embeddings.txt
-│       ├── lunyu_20chapters.txt
+│   ├── lab3/
+│   │   ├── lab3_w2v.ipynb
+│   │   ├── embeddings.txt
+│   │   ├── lunyu_20chapters.txt
+│   │   └── utils.py
+│   └── lab4/
+│       ├── lab4_trm.ipynb
 │       └── utils.py
 ├── lecture/
 │   └── 01-basic_text_proc.pdf
@@ -102,6 +130,7 @@ CS310-Natural-Language-Processing/
 
 ## 📅 更新日志
 
+- **2026-03-24**: 根据维护规范更新README，补充A2与Lab4内容，修正目录结构与技术栈说明
 - **2026-03-17**: 同步仓库最新结构，补充Lab 3内容，更新技术栈与目录说明
 - **2026-03-10**: 初始化README，包含Lab 1, Lab 2和Assignment 1的内容
 
@@ -118,4 +147,4 @@ CS310-Natural-Language-Processing/
 ---
 
 **SUSTech CS310 - Natural Language Processing**  
-*Last Updated: 2026年3月17日*
+*Last Updated: 2026年3月24日*
