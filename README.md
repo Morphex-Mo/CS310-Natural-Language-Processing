@@ -67,6 +67,23 @@
 pip install torch torchtext datasets gensim
 ```
 
+## 🧹 LaTeX 文档清理
+
+`writing assignment` 目录提供了一个仓库内置脚本用于编译并清理中间文件，适合在保留 `.tex` 和 `.pdf` 的同时删除 `aux/log/out` 等临时产物。
+
+推荐命令（在仓库根目录执行）：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ".vscode/latex_build_clean.ps1" "E:/CS310-Natural-Language-Processing/writing assignment/A2" "A2_w2v_written_solution.tex" "A2_w2v_written_solution"
+```
+
+参数说明：
+- 第一个参数：`.tex` 所在目录（建议使用绝对路径）
+- 第二个参数：`.tex` 文件名（含扩展名）
+- 第三个参数：文件主名（不含扩展名）
+
+注意：第一个参数需精确到 `.tex` 所在子目录（本例为 `writing assignment/A2`）；如果使用相对路径，可能导致清理步骤无法命中目标文件。
+
 ## 📂 目录结构
 
 ```
@@ -130,6 +147,7 @@ CS310-Natural-Language-Processing/
 
 ## 📅 更新日志
 
+- **2026-03-25**: 增加 LaTeX 清理说明，补充仓库脚本用法与参数注意事项
 - **2026-03-24**: 根据维护规范更新README，补充A2与Lab4内容，修正目录结构与技术栈说明
 - **2026-03-17**: 同步仓库最新结构，补充Lab 3内容，更新技术栈与目录说明
 - **2026-03-10**: 初始化README，包含Lab 1, Lab 2和Assignment 1的内容
@@ -147,4 +165,4 @@ CS310-Natural-Language-Processing/
 ---
 
 **SUSTech CS310 - Natural Language Processing**  
-*Last Updated: 2026年3月24日*
+*Last Updated: 2026年3月25日*

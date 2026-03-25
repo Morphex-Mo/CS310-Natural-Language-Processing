@@ -1,0 +1,103 @@
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=2em}
+\setlist[enumerate]{leftmargin=2em}
+
+\title{CS310 NLP Assignment 2 Written Solution}
+\author{12311805 莫丰源}
+\date{2026.3.25}
+
+\begin{document}
+\maketitle
+
+\section*{1. 交叉熵损失定义与化简}
+交叉熵损失定义为
+\[
+J(\bm{y},\hat{\bm{y}})=-\sum_{w\in \mathrm{Vocab}} y_w\log\hat{y}_w.
+\]
+因为 $\bm{y}$ 是 one-hot vector，
+\[
+\text{当 } w=o \text{ 时 } y_o=1,\qquad
+\text{当 } w\neq o \text{ 时 } y_w=0.
+\]
+代入后只有 $w=o$ 的那一项不为 0：
+\[
+J(\bm{y},\hat{\bm{y}})
+=-y_o\log\hat{y}_o-\sum_{w\neq o}0\cdot\log\hat{y}_w
+=-y_o\log\hat{y}_o.
+\]
+又因为 $y_o=1$，所以
+\[
+J(\bm{y},\hat{\bm{y}})=-\log\hat{y}_o.
+\]
+
+\section*{2. 求 $\dfrac{\partial J}{\partial \bm{v}_c}$}
+损失
+\[
+J(\bm{y},\hat{\bm{y}})=-\log\hat{y}_o.
+\]
+先对 $\hat{y}_o$ 求导：
+\[
+\frac{\partial \hat{y}_o}{\partial \bm{v}_c}
+=\hat{y}_o\left(\bm{u}_o-\sum_w \hat{y}_w\bm{u}_w\right).
+\]
+由 chain rule：
+\[
+\frac{\partial J}{\partial \bm{v}_c}
+=-\frac{1}{\hat{y}_o}\cdot\frac{\partial \hat{y}_o}{\partial \bm{v}_c}.
+\]
+代入化简：
+\[
+\frac{\partial J}{\partial \bm{v}_c}
+=\sum_{w\in \mathrm{Vocab}}(\hat{y}_w-y_w)\bm{u}_w.
+\]
+因为 $\bm{U}$ 的每一列正是 $\bm{u}_w$，上式是矩阵-向量乘法：
+\[
+\sum_w(\hat{y}_w-y_w)\bm{u}_w=\bm{U}(\hat{\bm{y}}-\bm{y}).
+\]
+因此
+\[
+\frac{\partial J}{\partial \bm{v}_c}=\bm{U}(\hat{\bm{y}}-\bm{y}).
+\]
+
+\section*{3. 求 $\dfrac{\partial J}{\partial \bm{u}_w}$}
+因为 $w$ 决定了 $y_w$ 的取值，分 $w=o$ 或 $w\neq o$ 两种情况。
+
+损失
+\[
+J=-\log\hat{y}_o,
+\qquad
+\hat{y}_o=\frac{\exp(\bm{u}_o^{\top}\bm{v}_c)}{Z},
+\qquad
+Z=\sum_k\exp(\bm{u}_k^{\top}\bm{v}_c).
+\]
+
+当 $w=o$：
+\[
+\frac{\partial J}{\partial \bm{u}_o}
+=(\hat{y}_o-1)\bm{v}_c
+=(\hat{y}_o-y_o)\bm{v}_c.
+\]
+
+当 $w\neq o$，$\bm{u}_w$ 只在分母 $Z$ 中：
+\[
+\frac{\partial J}{\partial \bm{u}_w}
+=\hat{y}_w\bm{v}_c
+=(\hat{y}_w-y_w)\bm{v}_c,
+\]
+因为此时 $y_w=0$。
+
+综上：
+\[
+\text{当 } w=o,\quad
+\frac{\partial J}{\partial \bm{u}_o}=(\hat{y}_o-y_o)\bm{v}_c;
+\]
+\[
+\text{当 } w\neq o,\quad
+\frac{\partial J}{\partial \bm{u}_w}=(\hat{y}_w-y_w)\bm{v}_c.
+\]
+
+\end{document}

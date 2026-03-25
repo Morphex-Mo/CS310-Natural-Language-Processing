@@ -77,6 +77,27 @@ git status
 # 如果有新增的notebook或文档，记得更新README
 ```
 
+## 🧹 LaTeX 清理维护规范
+
+`writing assignment` 下的 LaTeX 文档建议统一使用仓库脚本进行“编译 + 清理中间文件”。
+
+推荐执行方式（仓库根目录）：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ".vscode/latex_build_clean.ps1" "<tex所在绝对目录>" "<tex文件名.tex>" "<tex文件主名>"
+```
+
+示例：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ".vscode/latex_build_clean.ps1" "E:/CS310-Natural-Language-Processing/writing assignment" "A2_w2v_written_solution.tex" "A2_w2v_written_solution"
+```
+
+维护要点：
+- 第一个参数务必优先使用绝对路径，避免清理阶段路径拼接后找不到目标文件。
+- 脚本会删除常见中间文件（如 `aux/log/out/toc/nav/snm/fls/fdb_latexmk/xdv/synctex.gz`），保留源文件与PDF。
+- 若只想更新文档内容但不重新编译，可单独执行清理命令前先确认是否需要保留日志文件排查问题。
+
 ## 📋 维护责任
 
 - 保持README内容与实际文件结构一致

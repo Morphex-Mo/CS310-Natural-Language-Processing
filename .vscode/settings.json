@@ -1,0 +1,56 @@
+{
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.linting.enabled": false,
+  "latex-workshop.linting.run": "never",
+  "latex-workshop.message.error.show": true,
+  "latex-workshop.message.warning.show": false,
+  "latex-workshop.linting.chktex.enabled": false,
+  "latex-workshop.chktex.enabled": false,
+  "coverage-gutters.showLineCoverage": false,
+  "coverage-gutters.showGutterCoverage": false,
+  "coverage-gutters.showRulerCoverage": false,
+  "coverage-gutters.showNotifications": false,
+  "coverage-gutters.coverageFileNames": [],
+  "latex-workshop.view.pdf.viewer": "external",
+  "latex-workshop.latex.outDir": "%DIR%",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "C:/Users/mxm/AppData/Local/Programs/MiKTeX/miktex/bin/x64/xelatex.exe",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "latexmk_xelatex",
+      "command": "C:/Users/mxm/AppData/Local/Programs/MiKTeX/miktex/bin/x64/latexmk.exe",
+      "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "XeLaTeX",
+      "tools": [
+        "xelatex",
+        "xelatex"
+      ]
+    },
+    {
+      "name": "latexmk (xelatex)",
+      "tools": [
+        "latexmk_xelatex"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "lastUsed"
+}
