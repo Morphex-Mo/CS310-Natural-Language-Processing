@@ -41,6 +41,12 @@
   - 序列建模与实验调参
   - 配套工具函数与实验notebook
 
+- **Lab 5**: BPE与预训练实践
+  - BPE子词切分实验（`lab5_bpe.ipynb`）
+  - 预训练流程实验（`lab5_pretrain.ipynb`）
+  - 使用 `the-verdict.txt` 进行文本实验
+  - 配套工具函数与实验notebook
+
 ### 📖 课程讲义 (Lecture)
 - 基础文本处理相关讲义
 - `01-basic_text_proc.pdf`
@@ -122,11 +128,21 @@ CS310-Natural-Language-Processing/
 │   │   ├── embeddings.txt
 │   │   ├── lunyu_20chapters.txt
 │   │   └── utils.py
-│   └── lab4/
+│   ├── lab4/
 │       ├── lab4_trm.ipynb
+│       └── utils.py
+│   └── lab5/
+│       ├── lab5_bpe.ipynb
+│       ├── lab5_pretrain.ipynb
+│       ├── the-verdict.txt
 │       └── utils.py
 ├── lecture/
 │   └── 01-basic_text_proc.pdf
+├── writing assignment/
+│   └── A2/
+│       ├── A2_w2v_written_solution.tex
+│       ├── A2_w2v_written_solution.pdf
+│       └── A2_w2v_written.pdf
 ├── README_MAINTENANCE.md
 └── README.md
 ```
@@ -147,6 +163,7 @@ CS310-Natural-Language-Processing/
 
 ## 📅 更新日志
 
+- **2026-03-31**: 根据维护规范补充Lab 5说明，更新目录结构（含writing assignment），同步README日期
 - **2026-03-25**: 增加 LaTeX 清理说明，补充仓库脚本用法与参数注意事项
 - **2026-03-24**: 根据维护规范更新README，补充A2与Lab4内容，修正目录结构与技术栈说明
 - **2026-03-17**: 同步仓库最新结构，补充Lab 3内容，更新技术栈与目录说明
@@ -165,4 +182,4 @@ CS310-Natural-Language-Processing/
 ---
 
 **SUSTech CS310 - Natural Language Processing**  
-*Last Updated: 2026年3月25日*
+*Last Updated: 2026年3月31日*
