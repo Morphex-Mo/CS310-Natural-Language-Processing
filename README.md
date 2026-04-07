@@ -18,6 +18,11 @@
   - 数据与评估：`shakespeare.txt`、`questions-words-shakespeare.csv`、多组embeddings文件
   - 产出：实验报告与可视化结果
 
+- **A3**: 分词器训练与预训练实验
+  - 从零训练中文分词器并对比不同分词策略
+  - 预训练脚本与实验对比：`train_tokenizer_from_scratch.py`、`compare_tokenizers.py`、`run_pretrain.py`
+  - 数据：`wiki_zh_2019` 中文维基语料
+
 ### 🧪 实验课 (Lab)
 - **Lab 1**: Python基础文本处理
   - 文本清洗与预处理
@@ -47,6 +52,11 @@
   - 使用 `the-verdict.txt` 进行文本实验
   - 配套工具函数与实验notebook
 
+- **Lab 6**: KV Cache 推理加速
+  - 在自回归生成中实现 Key-Value Cache
+  - 修改 `MultiHeadAttention`、`TransformerBlock` 与 `GPTModel`
+  - 对比 `use_cache=True/False` 的生成速度差异
+
 ### 📖 课程讲义 (Lecture)
 - 基础文本处理相关讲义
 - `01-basic_text_proc.pdf`
@@ -58,6 +68,7 @@
 - **torchtext** - 文本处理库
 - **Gensim** - Word2Vec与词向量训练
 - **Hugging Face datasets** - 数据集加载
+- **tiktoken / tokenizers** - 分词与子词建模
 - **正则表达式 (re)** - 文本处理
 - **Jupyter Notebook** - 实验记录与结果展示
 
@@ -115,6 +126,13 @@ CS310-Natural-Language-Processing/
 │       ├── embeddings_set2_ember.txt
 │       ├── utils.py
 │       └── *.png
+│   └── A3/
+│       ├── compare_tokenizers.py
+│       ├── train_tokenizer_from_scratch.py
+│       ├── run_pretrain.py
+│       ├── utils.py
+│       └── wiki_zh_2019/
+│           └── wiki_zh/...
 ├── lab/
 │   ├── lab1/
 │   │   ├── lab1_text_processing.ipynb
@@ -129,12 +147,15 @@ CS310-Natural-Language-Processing/
 │   │   ├── lunyu_20chapters.txt
 │   │   └── utils.py
 │   ├── lab4/
-│       ├── lab4_trm.ipynb
-│       └── utils.py
+│   │   ├── lab4_trm.ipynb
+│   │   └── utils.py
 │   └── lab5/
-│       ├── lab5_bpe.ipynb
-│       ├── lab5_pretrain.ipynb
-│       ├── the-verdict.txt
+│   │   ├── lab5_bpe.ipynb
+│   │   ├── lab5_pretrain.ipynb
+│   │   ├── the-verdict.txt
+│   │   └── utils.py
+│   └── lab6/
+│       ├── lab6_kv-cache.ipynb
 │       └── utils.py
 ├── lecture/
 │   └── 01-basic_text_proc.pdf
@@ -163,6 +184,7 @@ CS310-Natural-Language-Processing/
 
 ## 📅 更新日志
 
+- **2026-04-07**: 按维护规范更新 README；补充 A3 与 Lab6 内容，刷新目录结构与技术栈，更新日期
 - **2026-03-31**: 根据维护规范补充Lab 5说明，更新目录结构（含writing assignment），同步README日期
 - **2026-03-25**: 增加 LaTeX 清理说明，补充仓库脚本用法与参数注意事项
 - **2026-03-24**: 根据维护规范更新README，补充A2与Lab4内容，修正目录结构与技术栈说明
@@ -182,4 +204,4 @@ CS310-Natural-Language-Processing/
 ---
 
 **SUSTech CS310 - Natural Language Processing**  
-*Last Updated: 2026年3月31日*
+*Last Updated: 2026年4月7日*
