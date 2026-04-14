@@ -57,6 +57,11 @@
   - 修改 `MultiHeadAttention`、`TransformerBlock` 与 `GPTModel`
   - 对比 `use_cache=True/False` 的生成速度差异
 
+- **Lab 7**: 解码策略与大模型推理
+  - 实践贪心搜索、采样等文本生成解码方法
+  - 使用 `lab7_decode.ipynb` 进行推理与结果对比
+  - 结合 `Qwen3-0.6B` 本地模型目录开展实验
+
 ### 📖 课程讲义 (Lecture)
 - 基础文本处理相关讲义
 - `01-basic_text_proc.pdf`
@@ -126,7 +131,7 @@ CS310-Natural-Language-Processing/
 │       ├── embeddings_set2_ember.txt
 │       ├── utils.py
 │       └── *.png
-│   └── A3/
+│   ├── A3/
 │       ├── compare_tokenizers.py
 │       ├── train_tokenizer_from_scratch.py
 │       ├── run_pretrain.py
@@ -149,14 +154,17 @@ CS310-Natural-Language-Processing/
 │   ├── lab4/
 │   │   ├── lab4_trm.ipynb
 │   │   └── utils.py
-│   └── lab5/
+│   ├── lab5/
 │   │   ├── lab5_bpe.ipynb
 │   │   ├── lab5_pretrain.ipynb
 │   │   ├── the-verdict.txt
 │   │   └── utils.py
-│   └── lab6/
-│       ├── lab6_kv-cache.ipynb
-│       └── utils.py
+│   ├── lab6/
+│   │   ├── lab6_kv-cache.ipynb
+│   │   └── utils.py
+│   └── lab7/
+│       ├── lab7_decode.ipynb
+│       └── Qwen3-0.6B/
 ├── lecture/
 │   └── 01-basic_text_proc.pdf
 ├── writing assignment/
@@ -184,6 +192,7 @@ CS310-Natural-Language-Processing/
 
 ## 📅 更新日志
 
+- **2026-04-14**: 根据维护规范补充Lab 7内容，同步目录结构并更新日期
 - **2026-04-07**: 按维护规范更新 README；补充 A3 与 Lab6 内容，刷新目录结构与技术栈，更新日期
 - **2026-03-31**: 根据维护规范补充Lab 5说明，更新目录结构（含writing assignment），同步README日期
 - **2026-03-25**: 增加 LaTeX 清理说明，补充仓库脚本用法与参数注意事项
@@ -204,4 +213,4 @@ CS310-Natural-Language-Processing/
 ---
 
 **SUSTech CS310 - Natural Language Processing**  
-*Last Updated: 2026年4月7日*
+*Last Updated: 2026年4月14日*
