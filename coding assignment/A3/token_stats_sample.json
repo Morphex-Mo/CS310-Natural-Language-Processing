@@ -1,0 +1,9 @@
+{
+  "input": "wikizh.txt",
+  "tokenizer": "wikizh_tokenizer_whitespace.json",
+  "lines": 200000,
+  "nonspace_chars": 25657210,
+  "tokens": 15073197,
+  "elapsed_sec": 5.89,
+  "full_scan": false
+}

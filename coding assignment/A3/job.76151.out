@@ -1,0 +1,362 @@
+pretrain_env_ok 2.5.1+cu121
+Loading tokenizer from: wikizh_tokenizer_whitespace.json
+Using device: cuda
+Total model parameters: 165,686,784 (165.69M)
+Checkpoints will be saved to: /home/xuyang_lab/cse12212752/A3-code/CS310-Natural-Language-Processing/coding assignment/A3/model_checkpoints
+
+Starting training...
+Using data fraction: 0.080 (37,416,823 chars sampled across the corpus)
+Data path: wikizh.txt
+Total text size: 37,416,837 characters
+Train/Val batches: 9,918/510
+Vocab size: 52,000
+Context length: 1024
+Batch size: 4
+Warmup steps: 732
+Minimum LR ratio: 0.2
+Gradient clip norm: 1.0
+Effective data_fraction: 0.080
+Effective train_ratio: 0.950
+Effective eval_iter: 8
+Epoch 1/20 | Step 100 | Train loss 9.3537 | Val loss 9.3283 | Tokens seen 409,600
+Epoch 1/20 | Step 200 | Train loss 8.7196 | Val loss 8.7335 | Tokens seen 819,200
+Epoch 1/20 | Step 300 | Train loss 8.6530 | Val loss 8.6827 | Tokens seen 1,228,800
+Epoch 1/20 | Step 400 | Train loss 8.6721 | Val loss 8.6492 | Tokens seen 1,638,400
+Epoch 1/20 | Step 500 | Train loss 8.6014 | Val loss 8.6032 | Tokens seen 2,048,000
+Epoch 1/20 | Step 600 | Train loss 8.5843 | Val loss 8.5961 | Tokens seen 2,457,600
+Epoch 1/20 | Step 700 | Train loss 8.5576 | Val loss 8.5527 | Tokens seen 2,867,200
+Epoch 1/20 | Step 800 | Train loss 8.4973 | Val loss 8.5088 | Tokens seen 3,276,800
+Epoch 1/20 | Step 900 | Train loss 8.4058 | Val loss 8.4378 | Tokens seen 3,686,400
+Epoch 1/20 | Step 1,000 | Train loss 8.2818 | Val loss 8.3729 | Tokens seen 4,096,000
+Saved checkpoint: model_checkpoints/checkpoint_step_1000.pth
+Epoch 1/20 | Step 1,100 | Train loss 8.2433 | Val loss 8.3105 | Tokens seen 4,505,600
+Epoch 1/20 | Step 1,200 | Train loss 8.1023 | Val loss 8.2769 | Tokens seen 4,915,200
+Epoch 1/20 | Step 1,300 | Train loss 8.1998 | Val loss 8.2196 | Tokens seen 5,324,800
+Epoch 1/20 | Step 1,400 | Train loss 8.2044 | Val loss 8.1672 | Tokens seen 5,734,400
+Epoch 1/20 | Step 1,500 | Train loss 7.9379 | Val loss 8.1371 | Tokens seen 6,144,000
+Epoch 1/20 | Step 1,600 | Train loss 7.9625 | Val loss 8.0666 | Tokens seen 6,553,600
+Epoch 1/20 | Step 1,700 | Train loss 7.9837 | Val loss 8.0125 | Tokens seen 6,963,200
+Epoch 1/20 | Step 1,800 | Train loss 7.7992 | Val loss 7.9552 | Tokens seen 7,372,800
+Epoch 1/20 | Step 1,900 | Train loss 7.8325 | Val loss 7.8901 | Tokens seen 7,782,400
+Epoch 1/20 | Step 2,000 | Train loss 7.8255 | Val loss 7.8601 | Tokens seen 8,192,000
+Saved checkpoint: model_checkpoints/checkpoint_step_2000.pth
+Epoch 1/20 | Step 2,100 | Train loss 7.8882 | Val loss 7.8372 | Tokens seen 8,601,600
+Epoch 1/20 | Step 2,200 | Train loss 7.6394 | Val loss 7.7491 | Tokens seen 9,011,200
+Epoch 1/20 | Step 2,300 | Train loss 7.3313 | Val loss 7.7358 | Tokens seen 9,420,800
+Epoch 1/20 | Step 2,400 | Train loss 7.7417 | Val loss 7.6645 | Tokens seen 9,830,400
+Epoch 1/20 | Step 2,500 | Train loss 7.5910 | Val loss 7.6143 | Tokens seen 10,240,000
+Epoch 1/20 | Step 2,600 | Train loss 7.4879 | Val loss 7.5742 | Tokens seen 10,649,600
+Epoch 1/20 | Step 2,700 | Train loss 7.3886 | Val loss 7.5063 | Tokens seen 11,059,200
+Epoch 1/20 | Step 2,800 | Train loss 7.5363 | Val loss 7.4433 | Tokens seen 11,468,800
+Epoch 1/20 | Step 2,900 | Train loss 7.3867 | Val loss 7.4320 | Tokens seen 11,878,400
+Epoch 1/20 | Step 3,000 | Train loss 7.3003 | Val loss 7.3834 | Tokens seen 12,288,000
+Saved checkpoint: model_checkpoints/checkpoint_step_3000.pth
+Epoch 1/20 | Step 3,100 | Train loss 7.2298 | Val loss 7.3480 | Tokens seen 12,697,600
+Epoch 1/20 | Step 3,200 | Train loss 7.0878 | Val loss 7.3229 | Tokens seen 13,107,200
+Epoch 1/20 | Step 3,300 | Train loss 7.3127 | Val loss 7.2813 | Tokens seen 13,516,800
+Epoch 1/20 | Step 3,400 | Train loss 7.1506 | Val loss 7.2271 | Tokens seen 13,926,400
+Epoch 1/20 | Step 3,500 | Train loss 7.0640 | Val loss 7.2168 | Tokens seen 14,336,000
+Epoch 1/20 | Step 3,600 | Train loss 7.0246 | Val loss 7.1521 | Tokens seen 14,745,600
+Epoch 1/20 | Step 3,700 | Train loss 7.0774 | Val loss 7.1232 | Tokens seen 15,155,200
+Epoch 1/20 | Step 3,800 | Train loss 6.9438 | Val loss 7.0994 | Tokens seen 15,564,800
+Epoch 1/20 | Step 3,900 | Train loss 7.0355 | Val loss 7.0698 | Tokens seen 15,974,400
+Epoch 1/20 | Step 4,000 | Train loss 6.8742 | Val loss 7.0345 | Tokens seen 16,384,000
+Saved checkpoint: model_checkpoints/checkpoint_step_4000.pth
+Epoch 1/20 | Step 4,100 | Train loss 6.6112 | Val loss 7.0073 | Tokens seen 16,793,600
+Epoch 1/20 | Step 4,200 | Train loss 6.8526 | Val loss 6.9932 | Tokens seen 17,203,200
+Epoch 1/20 | Step 4,300 | Train loss 6.8790 | Val loss 6.9647 | Tokens seen 17,612,800
+Epoch 1/20 | Step 4,400 | Train loss 6.8016 | Val loss 6.9206 | Tokens seen 18,022,400
+Epoch 1/20 | Step 4,500 | Train loss 6.7607 | Val loss 6.8827 | Tokens seen 18,432,000
+Epoch 1/20 | Step 4,600 | Train loss 6.8982 | Val loss 6.8579 | Tokens seen 18,841,600
+Epoch 1/20 | Step 4,700 | Train loss 6.6250 | Val loss 6.8211 | Tokens seen 19,251,200
+Epoch 1/20 | Step 4,800 | Train loss 6.7971 | Val loss 6.8044 | Tokens seen 19,660,800
+Epoch 1/20 | Step 4,900 | Train loss 6.8380 | Val loss 6.7786 | Tokens seen 20,070,400
+Epoch 1/20 | Step 5,000 | Train loss 6.5633 | Val loss 6.7519 | Tokens seen 20,480,000
+Saved checkpoint: model_checkpoints/checkpoint_step_5000.pth
+Epoch 1/20 | Step 5,100 | Train loss 6.7856 | Val loss 6.7333 | Tokens seen 20,889,600
+Epoch 1/20 | Step 5,200 | Train loss 6.6622 | Val loss 6.7062 | Tokens seen 21,299,200
+Epoch 1/20 | Step 5,300 | Train loss 6.5238 | Val loss 6.6913 | Tokens seen 21,708,800
+Epoch 1/20 | Step 5,400 | Train loss 6.5956 | Val loss 6.6404 | Tokens seen 22,118,400
+Epoch 1/20 | Step 5,500 | Train loss 6.6303 | Val loss 6.6405 | Tokens seen 22,528,000
+Epoch 1/20 | Step 5,600 | Train loss 6.4243 | Val loss 6.6168 | Tokens seen 22,937,600
+Epoch 1/20 | Step 5,700 | Train loss 6.5122 | Val loss 6.5916 | Tokens seen 23,347,200
+Epoch 1/20 | Step 5,800 | Train loss 6.5398 | Val loss 6.5623 | Tokens seen 23,756,800
+Epoch 1/20 | Step 5,900 | Train loss 6.4154 | Val loss 6.5331 | Tokens seen 24,166,400
+Epoch 1/20 | Step 6,000 | Train loss 6.3304 | Val loss 6.5011 | Tokens seen 24,576,000
+Saved checkpoint: model_checkpoints/checkpoint_step_6000.pth
+Epoch 1/20 | Step 6,100 | Train loss 6.3811 | Val loss 6.4909 | Tokens seen 24,985,600
+Epoch 1/20 | Step 6,200 | Train loss 6.4373 | Val loss 6.4662 | Tokens seen 25,395,200
+Epoch 1/20 | Step 6,300 | Train loss 6.2934 | Val loss 6.4512 | Tokens seen 25,804,800
+Epoch 1/20 | Step 6,400 | Train loss 6.2154 | Val loss 6.4200 | Tokens seen 26,214,400
+Epoch 1/20 | Step 6,500 | Train loss 6.3241 | Val loss 6.4112 | Tokens seen 26,624,000
+Epoch 1/20 | Step 6,600 | Train loss 6.0577 | Val loss 6.3927 | Tokens seen 27,033,600
+Epoch 1/20 | Step 6,700 | Train loss 6.3724 | Val loss 6.3830 | Tokens seen 27,443,200
+Epoch 1/20 | Step 6,800 | Train loss 6.2089 | Val loss 6.3631 | Tokens seen 27,852,800
+Epoch 1/20 | Step 6,900 | Train loss 6.2054 | Val loss 6.3386 | Tokens seen 28,262,400
+Epoch 1/20 | Step 7,000 | Train loss 6.2418 | Val loss 6.3269 | Tokens seen 28,672,000
+Saved checkpoint: model_checkpoints/checkpoint_step_7000.pth
+Epoch 1/20 | Step 7,100 | Train loss 6.2452 | Val loss 6.3145 | Tokens seen 29,081,600
+Epoch 1/20 | Step 7,200 | Train loss 6.2200 | Val loss 6.2837 | Tokens seen 29,491,200
+Epoch 1/20 | Step 7,300 | Train loss 6.1165 | Val loss 6.2627 | Tokens seen 29,900,800
+Epoch 1/20 | Step 7,400 | Train loss 5.8347 | Val loss 6.2579 | Tokens seen 30,310,400
+Epoch 1/20 | Step 7,500 | Train loss 6.0679 | Val loss 6.2429 | Tokens seen 30,720,000
+Epoch 1/20 | Step 7,600 | Train loss 5.9211 | Val loss 6.2214 | Tokens seen 31,129,600
+Epoch 1/20 | Step 7,700 | Train loss 5.9510 | Val loss 6.2214 | Tokens seen 31,539,200
+Epoch 1/20 | Step 7,800 | Train loss 5.8877 | Val loss 6.1881 | Tokens seen 31,948,800
+Epoch 1/20 | Step 7,900 | Train loss 6.0621 | Val loss 6.1704 | Tokens seen 32,358,400
+Epoch 1/20 | Step 8,000 | Train loss 5.9158 | Val loss 6.1515 | Tokens seen 32,768,000
+Saved checkpoint: model_checkpoints/checkpoint_step_8000.pth
+Epoch 1/20 | Step 8,100 | Train loss 5.9753 | Val loss 6.1441 | Tokens seen 33,177,600
+Epoch 1/20 | Step 8,200 | Train loss 5.9626 | Val loss 6.1212 | Tokens seen 33,587,200
+Epoch 1/20 | Step 8,300 | Train loss 6.0118 | Val loss 6.0841 | Tokens seen 33,996,800
+Epoch 1/20 | Step 8,400 | Train loss 5.8564 | Val loss 6.0848 | Tokens seen 34,406,400
+Epoch 1/20 | Step 8,500 | Train loss 5.8247 | Val loss 6.0789 | Tokens seen 34,816,000
+Epoch 1/20 | Step 8,600 | Train loss 5.7019 | Val loss 6.0551 | Tokens seen 35,225,600
+Epoch 1/20 | Step 8,700 | Train loss 5.9150 | Val loss 6.0314 | Tokens seen 35,635,200
+Epoch 1/20 | Step 8,800 | Train loss 5.9471 | Val loss 6.0092 | Tokens seen 36,044,800
+Epoch 1/20 | Step 8,900 | Train loss 5.9492 | Val loss 6.0129 | Tokens seen 36,454,400
+Epoch 1/20 | Step 9,000 | Train loss 5.6609 | Val loss 6.0025 | Tokens seen 36,864,000
+Saved checkpoint: model_checkpoints/checkpoint_step_9000.pth
+Epoch 1/20 | Step 9,100 | Train loss 5.8936 | Val loss 5.9955 | Tokens seen 37,273,600
+Epoch 1/20 | Step 9,200 | Train loss 5.7618 | Val loss 5.9769 | Tokens seen 37,683,200
+Epoch 1/20 | Step 9,300 | Train loss 5.8403 | Val loss 5.9596 | Tokens seen 38,092,800
+Epoch 1/20 | Step 9,400 | Train loss 5.6725 | Val loss 5.9524 | Tokens seen 38,502,400
+Epoch 1/20 | Step 9,500 | Train loss 5.7298 | Val loss 5.9420 | Tokens seen 38,912,000
+Epoch 1/20 | Step 9,600 | Train loss 5.5773 | Val loss 5.9285 | Tokens seen 39,321,600
+Epoch 1/20 | Step 9,700 | Train loss 5.5839 | Val loss 5.9240 | Tokens seen 39,731,200
+Epoch 1/20 | Step 9,800 | Train loss 5.4203 | Val loss 5.9062 | Tokens seen 40,140,800
+Epoch 1/20 | Step 9,900 | Train loss 5.6357 | Val loss 5.9002 | Tokens seen 40,550,400
+Epoch 2/20 | Step 10,000 | Train loss 5.6416 | Val loss 5.8775 | Tokens seen 40,960,000
+Saved checkpoint: model_checkpoints/checkpoint_step_10000.pth
+Epoch 2/20 | Step 10,100 | Train loss 5.7175 | Val loss 5.8651 | Tokens seen 41,369,600
+Epoch 2/20 | Step 10,200 | Train loss 5.4632 | Val loss 5.8578 | Tokens seen 41,779,200
+Epoch 2/20 | Step 10,300 | Train loss 5.6682 | Val loss 5.8492 | Tokens seen 42,188,800
+Epoch 2/20 | Step 10,400 | Train loss 5.8129 | Val loss 5.8518 | Tokens seen 42,598,400
+Epoch 2/20 | Step 10,500 | Train loss 5.5462 | Val loss 5.8313 | Tokens seen 43,008,000
+Epoch 2/20 | Step 10,600 | Train loss 5.6037 | Val loss 5.8247 | Tokens seen 43,417,600
+Epoch 2/20 | Step 10,700 | Train loss 5.4822 | Val loss 5.7994 | Tokens seen 43,827,200
+Epoch 2/20 | Step 10,800 | Train loss 5.5247 | Val loss 5.7973 | Tokens seen 44,236,800
+Epoch 2/20 | Step 10,900 | Train loss 5.5821 | Val loss 5.7703 | Tokens seen 44,646,400
+Epoch 2/20 | Step 11,000 | Train loss 5.5749 | Val loss 5.7723 | Tokens seen 45,056,000
+Saved checkpoint: model_checkpoints/checkpoint_step_11000.pth
+Epoch 2/20 | Step 11,100 | Train loss 5.3370 | Val loss 5.7588 | Tokens seen 45,465,600
+Epoch 2/20 | Step 11,200 | Train loss 5.3620 | Val loss 5.7451 | Tokens seen 45,875,200
+Epoch 2/20 | Step 11,300 | Train loss 5.4642 | Val loss 5.7460 | Tokens seen 46,284,800
+Epoch 2/20 | Step 11,400 | Train loss 5.2636 | Val loss 5.7423 | Tokens seen 46,694,400
+Epoch 2/20 | Step 11,500 | Train loss 5.4036 | Val loss 5.7228 | Tokens seen 47,104,000
+Epoch 2/20 | Step 11,600 | Train loss 5.4585 | Val loss 5.7327 | Tokens seen 47,513,600
+Epoch 2/20 | Step 11,700 | Train loss 5.3491 | Val loss 5.7169 | Tokens seen 47,923,200
+Epoch 2/20 | Step 11,800 | Train loss 5.4829 | Val loss 5.7024 | Tokens seen 48,332,800
+Epoch 2/20 | Step 11,900 | Train loss 5.2883 | Val loss 5.7044 | Tokens seen 48,742,400
+Epoch 2/20 | Step 12,000 | Train loss 5.5038 | Val loss 5.6912 | Tokens seen 49,152,000
+Saved checkpoint: model_checkpoints/checkpoint_step_12000.pth
+Epoch 2/20 | Step 12,100 | Train loss 5.3722 | Val loss 5.6797 | Tokens seen 49,561,600
+Epoch 2/20 | Step 12,200 | Train loss 5.4159 | Val loss 5.6764 | Tokens seen 49,971,200
+Epoch 2/20 | Step 12,300 | Train loss 5.3791 | Val loss 5.6746 | Tokens seen 50,380,800
+Epoch 2/20 | Step 12,400 | Train loss 5.3904 | Val loss 5.6632 | Tokens seen 50,790,400
+Epoch 2/20 | Step 12,500 | Train loss 5.4312 | Val loss 5.6509 | Tokens seen 51,200,000
+Epoch 2/20 | Step 12,600 | Train loss 5.4873 | Val loss 5.6561 | Tokens seen 51,609,600
+Epoch 2/20 | Step 12,700 | Train loss 5.4395 | Val loss 5.6432 | Tokens seen 52,019,200
+Epoch 2/20 | Step 12,800 | Train loss 5.2380 | Val loss 5.6297 | Tokens seen 52,428,800
+Epoch 2/20 | Step 12,900 | Train loss 5.3282 | Val loss 5.6283 | Tokens seen 52,838,400
+Epoch 2/20 | Step 13,000 | Train loss 5.3602 | Val loss 5.6210 | Tokens seen 53,248,000
+Saved checkpoint: model_checkpoints/checkpoint_step_13000.pth
+Epoch 2/20 | Step 13,100 | Train loss 5.2272 | Val loss 5.6113 | Tokens seen 53,657,600
+Epoch 2/20 | Step 13,200 | Train loss 5.4379 | Val loss 5.5998 | Tokens seen 54,067,200
+Epoch 2/20 | Step 13,300 | Train loss 5.3546 | Val loss 5.5947 | Tokens seen 54,476,800
+Epoch 2/20 | Step 13,400 | Train loss 5.2306 | Val loss 5.5971 | Tokens seen 54,886,400
+Epoch 2/20 | Step 13,500 | Train loss 5.3059 | Val loss 5.5900 | Tokens seen 55,296,000
+Epoch 2/20 | Step 13,600 | Train loss 5.3089 | Val loss 5.5821 | Tokens seen 55,705,600
+Epoch 2/20 | Step 13,700 | Train loss 5.1783 | Val loss 5.5833 | Tokens seen 56,115,200
+Epoch 2/20 | Step 13,800 | Train loss 5.0148 | Val loss 5.5723 | Tokens seen 56,524,800
+Epoch 2/20 | Step 13,900 | Train loss 5.1830 | Val loss 5.5657 | Tokens seen 56,934,400
+Epoch 2/20 | Step 14,000 | Train loss 5.1207 | Val loss 5.5495 | Tokens seen 57,344,000
+Saved checkpoint: model_checkpoints/checkpoint_step_14000.pth
+Epoch 2/20 | Step 14,100 | Train loss 5.1033 | Val loss 5.5435 | Tokens seen 57,753,600
+Epoch 2/20 | Step 14,200 | Train loss 5.2063 | Val loss 5.5409 | Tokens seen 58,163,200
+Epoch 2/20 | Step 14,300 | Train loss 5.0424 | Val loss 5.5301 | Tokens seen 58,572,800
+Epoch 2/20 | Step 14,400 | Train loss 5.2452 | Val loss 5.5248 | Tokens seen 58,982,400
+Epoch 2/20 | Step 14,500 | Train loss 5.1159 | Val loss 5.5167 | Tokens seen 59,392,000
+Epoch 2/20 | Step 14,600 | Train loss 5.1078 | Val loss 5.5074 | Tokens seen 59,801,600
+Epoch 2/20 | Step 14,700 | Train loss 5.1205 | Val loss 5.5096 | Tokens seen 60,211,200
+Epoch 2/20 | Step 14,800 | Train loss 5.1450 | Val loss 5.5147 | Tokens seen 60,620,800
+Epoch 2/20 | Step 14,900 | Train loss 5.1996 | Val loss 5.4931 | Tokens seen 61,030,400
+Epoch 2/20 | Step 15,000 | Train loss 5.0218 | Val loss 5.4789 | Tokens seen 61,440,000
+Saved checkpoint: model_checkpoints/checkpoint_step_15000.pth
+Epoch 2/20 | Step 15,100 | Train loss 5.0223 | Val loss 5.4843 | Tokens seen 61,849,600
+Epoch 2/20 | Step 15,200 | Train loss 5.2074 | Val loss 5.4720 | Tokens seen 62,259,200
+Epoch 2/20 | Step 15,300 | Train loss 4.9914 | Val loss 5.4733 | Tokens seen 62,668,800
+Epoch 2/20 | Step 15,400 | Train loss 5.0355 | Val loss 5.4582 | Tokens seen 63,078,400
+Epoch 2/20 | Step 15,500 | Train loss 4.9066 | Val loss 5.4619 | Tokens seen 63,488,000
+Epoch 2/20 | Step 15,600 | Train loss 4.8178 | Val loss 5.4533 | Tokens seen 63,897,600
+Epoch 2/20 | Step 15,700 | Train loss 5.0755 | Val loss 5.4463 | Tokens seen 64,307,200
+Epoch 2/20 | Step 15,800 | Train loss 5.1123 | Val loss 5.4518 | Tokens seen 64,716,800
+Epoch 2/20 | Step 15,900 | Train loss 4.9399 | Val loss 5.4341 | Tokens seen 65,126,400
+Epoch 2/20 | Step 16,000 | Train loss 4.9854 | Val loss 5.4274 | Tokens seen 65,536,000
+Saved checkpoint: model_checkpoints/checkpoint_step_16000.pth
+Epoch 2/20 | Step 16,100 | Train loss 4.8988 | Val loss 5.4170 | Tokens seen 65,945,600
+Epoch 2/20 | Step 16,200 | Train loss 4.7940 | Val loss 5.4130 | Tokens seen 66,355,200
+Epoch 2/20 | Step 16,300 | Train loss 5.0830 | Val loss 5.4045 | Tokens seen 66,764,800
+Epoch 2/20 | Step 16,400 | Train loss 5.1042 | Val loss 5.4036 | Tokens seen 67,174,400
+Epoch 2/20 | Step 16,500 | Train loss 5.0044 | Val loss 5.4116 | Tokens seen 67,584,000
+Epoch 2/20 | Step 16,600 | Train loss 4.9185 | Val loss 5.3964 | Tokens seen 67,993,600
+Epoch 2/20 | Step 16,700 | Train loss 4.9862 | Val loss 5.3967 | Tokens seen 68,403,200
+Epoch 2/20 | Step 16,800 | Train loss 5.0481 | Val loss 5.4035 | Tokens seen 68,812,800
+Epoch 2/20 | Step 16,900 | Train loss 4.8500 | Val loss 5.4027 | Tokens seen 69,222,400
+Epoch 2/20 | Step 17,000 | Train loss 4.9489 | Val loss 5.3912 | Tokens seen 69,632,000
+Saved checkpoint: model_checkpoints/checkpoint_step_17000.pth
+Epoch 2/20 | Step 17,100 | Train loss 5.0040 | Val loss 5.3948 | Tokens seen 70,041,600
+Epoch 2/20 | Step 17,200 | Train loss 5.0251 | Val loss 5.3911 | Tokens seen 70,451,200
+Epoch 2/20 | Step 17,300 | Train loss 4.8408 | Val loss 5.3830 | Tokens seen 70,860,800
+Epoch 2/20 | Step 17,400 | Train loss 5.1203 | Val loss 5.3847 | Tokens seen 71,270,400
+Epoch 2/20 | Step 17,500 | Train loss 5.1197 | Val loss 5.3829 | Tokens seen 71,680,000
+Epoch 2/20 | Step 17,600 | Train loss 4.8190 | Val loss 5.3755 | Tokens seen 72,089,600
+Epoch 2/20 | Step 17,700 | Train loss 4.8653 | Val loss 5.3675 | Tokens seen 72,499,200
+Epoch 2/20 | Step 17,800 | Train loss 4.9788 | Val loss 5.3791 | Tokens seen 72,908,800
+Epoch 2/20 | Step 17,900 | Train loss 5.0321 | Val loss 5.3583 | Tokens seen 73,318,400
+Epoch 2/20 | Step 18,000 | Train loss 4.9126 | Val loss 5.3527 | Tokens seen 73,728,000
+Saved checkpoint: model_checkpoints/checkpoint_step_18000.pth
+Epoch 2/20 | Step 18,100 | Train loss 4.8126 | Val loss 5.3524 | Tokens seen 74,137,600
+Epoch 2/20 | Step 18,200 | Train loss 4.8421 | Val loss 5.3535 | Tokens seen 74,547,200
+Epoch 2/20 | Step 18,300 | Train loss 4.9469 | Val loss 5.3583 | Tokens seen 74,956,800
+Epoch 2/20 | Step 18,400 | Train loss 4.8632 | Val loss 5.3455 | Tokens seen 75,366,400
+Epoch 2/20 | Step 18,500 | Train loss 4.8926 | Val loss 5.3430 | Tokens seen 75,776,000
+Epoch 2/20 | Step 18,600 | Train loss 4.7779 | Val loss 5.3462 | Tokens seen 76,185,600
+Epoch 2/20 | Step 18,700 | Train loss 4.9014 | Val loss 5.3318 | Tokens seen 76,595,200
+Epoch 2/20 | Step 18,800 | Train loss 4.8115 | Val loss 5.3321 | Tokens seen 77,004,800
+Epoch 2/20 | Step 18,900 | Train loss 4.6990 | Val loss 5.3228 | Tokens seen 77,414,400
+Epoch 2/20 | Step 19,000 | Train loss 4.8722 | Val loss 5.3175 | Tokens seen 77,824,000
+Saved checkpoint: model_checkpoints/checkpoint_step_19000.pth
+Epoch 2/20 | Step 19,100 | Train loss 4.7593 | Val loss 5.3206 | Tokens seen 78,233,600
+Epoch 2/20 | Step 19,200 | Train loss 4.8193 | Val loss 5.3169 | Tokens seen 78,643,200
+Epoch 2/20 | Step 19,300 | Train loss 4.7599 | Val loss 5.3209 | Tokens seen 79,052,800
+Epoch 2/20 | Step 19,400 | Train loss 4.6985 | Val loss 5.3251 | Tokens seen 79,462,400
+Epoch 2/20 | Step 19,500 | Train loss 4.6081 | Val loss 5.3133 | Tokens seen 79,872,000
+Epoch 2/20 | Step 19,600 | Train loss 4.7273 | Val loss 5.3123 | Tokens seen 80,281,600
+Epoch 2/20 | Step 19,700 | Train loss 4.9680 | Val loss 5.3156 | Tokens seen 80,691,200
+Epoch 2/20 | Step 19,800 | Train loss 4.7200 | Val loss 5.3148 | Tokens seen 81,100,800
+Epoch 3/20 | Step 19,900 | Train loss 4.7353 | Val loss 5.2992 | Tokens seen 81,510,400
+Epoch 3/20 | Step 20,000 | Train loss 4.7137 | Val loss 5.3048 | Tokens seen 81,920,000
+Saved checkpoint: model_checkpoints/checkpoint_step_20000.pth
+Epoch 3/20 | Step 20,100 | Train loss 4.7873 | Val loss 5.3023 | Tokens seen 82,329,600
+Epoch 3/20 | Step 20,200 | Train loss 4.8053 | Val loss 5.3127 | Tokens seen 82,739,200
+Epoch 3/20 | Step 20,300 | Train loss 4.8047 | Val loss 5.3087 | Tokens seen 83,148,800
+Epoch 3/20 | Step 20,400 | Train loss 4.7447 | Val loss 5.3004 | Tokens seen 83,558,400
+Epoch 3/20 | Step 20,500 | Train loss 4.7449 | Val loss 5.3086 | Tokens seen 83,968,000
+Epoch 3/20 | Step 20,600 | Train loss 4.6157 | Val loss 5.3110 | Tokens seen 84,377,600
+Epoch 3/20 | Step 20,700 | Train loss 4.7878 | Val loss 5.3053 | Tokens seen 84,787,200
+Epoch 3/20 | Step 20,800 | Train loss 4.7364 | Val loss 5.3094 | Tokens seen 85,196,800
+Epoch 3/20 | Step 20,900 | Train loss 4.6599 | Val loss 5.2992 | Tokens seen 85,606,400
+Epoch 3/20 | Step 21,000 | Train loss 4.8550 | Val loss 5.3037 | Tokens seen 86,016,000
+Saved checkpoint: model_checkpoints/checkpoint_step_21000.pth
+Epoch 3/20 | Step 21,100 | Train loss 4.7607 | Val loss 5.3031 | Tokens seen 86,425,600
+Epoch 3/20 | Step 21,200 | Train loss 4.7027 | Val loss 5.2958 | Tokens seen 86,835,200
+Epoch 3/20 | Step 21,300 | Train loss 4.8088 | Val loss 5.3002 | Tokens seen 87,244,800
+Epoch 3/20 | Step 21,400 | Train loss 4.6098 | Val loss 5.2908 | Tokens seen 87,654,400
+Epoch 3/20 | Step 21,500 | Train loss 4.6303 | Val loss 5.2794 | Tokens seen 88,064,000
+Epoch 3/20 | Step 21,600 | Train loss 4.7187 | Val loss 5.2784 | Tokens seen 88,473,600
+Epoch 3/20 | Step 21,700 | Train loss 4.7004 | Val loss 5.2744 | Tokens seen 88,883,200
+Epoch 3/20 | Step 21,800 | Train loss 4.6660 | Val loss 5.2836 | Tokens seen 89,292,800
+Epoch 3/20 | Step 21,900 | Train loss 4.7173 | Val loss 5.2782 | Tokens seen 89,702,400
+Epoch 3/20 | Step 22,000 | Train loss 4.6941 | Val loss 5.2770 | Tokens seen 90,112,000
+Saved checkpoint: model_checkpoints/checkpoint_step_22000.pth
+Epoch 3/20 | Step 22,100 | Train loss 4.5638 | Val loss 5.2552 | Tokens seen 90,521,600
+Epoch 3/20 | Step 22,200 | Train loss 4.6987 | Val loss 5.2555 | Tokens seen 90,931,200
+Epoch 3/20 | Step 22,300 | Train loss 4.7728 | Val loss 5.2545 | Tokens seen 91,340,800
+Epoch 3/20 | Step 22,400 | Train loss 4.6751 | Val loss 5.2466 | Tokens seen 91,750,400
+Epoch 3/20 | Step 22,500 | Train loss 4.6496 | Val loss 5.2545 | Tokens seen 92,160,000
+Epoch 3/20 | Step 22,600 | Train loss 4.6223 | Val loss 5.2533 | Tokens seen 92,569,600
+Epoch 3/20 | Step 22,700 | Train loss 4.4527 | Val loss 5.2535 | Tokens seen 92,979,200
+Epoch 3/20 | Step 22,800 | Train loss 4.4828 | Val loss 5.2507 | Tokens seen 93,388,800
+Epoch 3/20 | Step 22,900 | Train loss 4.7445 | Val loss 5.2446 | Tokens seen 93,798,400
+Epoch 3/20 | Step 23,000 | Train loss 4.4840 | Val loss 5.2427 | Tokens seen 94,208,000
+Saved checkpoint: model_checkpoints/checkpoint_step_23000.pth
+Epoch 3/20 | Step 23,100 | Train loss 4.5870 | Val loss 5.2452 | Tokens seen 94,617,600
+Epoch 3/20 | Step 23,200 | Train loss 4.6767 | Val loss 5.2446 | Tokens seen 95,027,200
+Epoch 3/20 | Step 23,300 | Train loss 4.5402 | Val loss 5.2338 | Tokens seen 95,436,800
+Epoch 3/20 | Step 23,400 | Train loss 4.6360 | Val loss 5.2298 | Tokens seen 95,846,400
+Epoch 3/20 | Step 23,500 | Train loss 4.4686 | Val loss 5.2320 | Tokens seen 96,256,000
+Epoch 3/20 | Step 23,600 | Train loss 4.6838 | Val loss 5.2219 | Tokens seen 96,665,600
+Epoch 3/20 | Step 23,700 | Train loss 4.6897 | Val loss 5.2202 | Tokens seen 97,075,200
+Epoch 3/20 | Step 23,800 | Train loss 4.5958 | Val loss 5.2237 | Tokens seen 97,484,800
+Epoch 3/20 | Step 23,900 | Train loss 4.5799 | Val loss 5.2263 | Tokens seen 97,894,400
+Epoch 3/20 | Step 24,000 | Train loss 4.7998 | Val loss 5.2265 | Tokens seen 98,304,000
+Saved checkpoint: model_checkpoints/checkpoint_step_24000.pth
+Epoch 3/20 | Step 24,100 | Train loss 4.6284 | Val loss 5.2269 | Tokens seen 98,713,600
+Epoch 3/20 | Step 24,200 | Train loss 4.5388 | Val loss 5.2216 | Tokens seen 99,123,200
+Epoch 3/20 | Step 24,300 | Train loss 4.6370 | Val loss 5.2187 | Tokens seen 99,532,800
+Epoch 3/20 | Step 24,400 | Train loss 4.4079 | Val loss 5.2171 | Tokens seen 99,942,400
+Epoch 3/20 | Step 24,415 | Train loss 4.4348 | Val loss 5.2104 | Tokens seen 100,003,840
+Milestone check FAILED: at 100,003,840 tokens, train loss 4.4348, val loss 5.2104 vs threshold 5.0000
+Target criterion not met at milestone, but training will continue to the end of the scheduled run.
+Epoch 3/20 | Step 24,416 | Train loss 4.5244 | Val loss 5.2116 | Tokens seen 100,007,936
+Past milestone but not yet under threshold: train loss 4.5244, val loss 5.2116; continuing training.
+Epoch 3/20 | Step 24,417 | Train loss 4.6151 | Val loss 5.2135 | Tokens seen 100,012,032
+Past milestone but not yet under threshold: train loss 4.6151, val loss 5.2135; continuing training.
+Epoch 3/20 | Step 24,418 | Train loss 4.6164 | Val loss 5.2157 | Tokens seen 100,016,128
+Past milestone but not yet under threshold: train loss 4.6164, val loss 5.2157; continuing training.
+Epoch 3/20 | Step 24,419 | Train loss 4.5848 | Val loss 5.2189 | Tokens seen 100,020,224
+Past milestone but not yet under threshold: train loss 4.5848, val loss 5.2189; continuing training.
+Epoch 3/20 | Step 24,420 | Train loss 4.5114 | Val loss 5.2193 | Tokens seen 100,024,320
+Past milestone but not yet under threshold: train loss 4.5114, val loss 5.2193; continuing training.
+Epoch 3/20 | Step 24,421 | Train loss 4.7137 | Val loss 5.2191 | Tokens seen 100,028,416
+Past milestone but not yet under threshold: train loss 4.7137, val loss 5.2191; continuing training.
+Epoch 3/20 | Step 24,422 | Train loss 4.3822 | Val loss 5.2184 | Tokens seen 100,032,512
+Past milestone but not yet under threshold: train loss 4.3822, val loss 5.2184; continuing training.
+Epoch 3/20 | Step 24,423 | Train loss 4.4437 | Val loss 5.2176 | Tokens seen 100,036,608
+Past milestone but not yet under threshold: train loss 4.4437, val loss 5.2176; continuing training.
+Epoch 3/20 | Step 24,424 | Train loss 4.4635 | Val loss 5.2158 | Tokens seen 100,040,704
+Past milestone but not yet under threshold: train loss 4.4635, val loss 5.2158; continuing training.
+Epoch 3/20 | Step 24,425 | Train loss 4.5063 | Val loss 5.2146 | Tokens seen 100,044,800
+Past milestone but not yet under threshold: train loss 4.5063, val loss 5.2146; continuing training.
+Epoch 3/20 | Step 24,426 | Train loss 4.6484 | Val loss 5.2130 | Tokens seen 100,048,896
+Past milestone but not yet under threshold: train loss 4.6484, val loss 5.2130; continuing training.
+Epoch 3/20 | Step 24,427 | Train loss 4.5755 | Val loss 5.2107 | Tokens seen 100,052,992
+Past milestone but not yet under threshold: train loss 4.5755, val loss 5.2107; continuing training.
+Epoch 3/20 | Step 24,428 | Train loss 4.5779 | Val loss 5.2098 | Tokens seen 100,057,088
+Past milestone but not yet under threshold: train loss 4.5779, val loss 5.2098; continuing training.
+Epoch 3/20 | Step 24,429 | Train loss 4.6252 | Val loss 5.2099 | Tokens seen 100,061,184
+Past milestone but not yet under threshold: train loss 4.6252, val loss 5.2099; continuing training.
+Epoch 3/20 | Step 24,430 | Train loss 4.4382 | Val loss 5.2101 | Tokens seen 100,065,280
+Past milestone but not yet under threshold: train loss 4.4382, val loss 5.2101; continuing training.
+Epoch 3/20 | Step 24,431 | Train loss 4.6715 | Val loss 5.2089 | Tokens seen 100,069,376
+Past milestone but not yet under threshold: train loss 4.6715, val loss 5.2089; continuing training.
+Epoch 3/20 | Step 24,432 | Train loss 4.6926 | Val loss 5.2075 | Tokens seen 100,073,472
+Past milestone but not yet under threshold: train loss 4.6926, val loss 5.2075; continuing training.
+Epoch 3/20 | Step 24,433 | Train loss 4.4264 | Val loss 5.2063 | Tokens seen 100,077,568
+Past milestone but not yet under threshold: train loss 4.4264, val loss 5.2063; continuing training.
+Epoch 3/20 | Step 24,434 | Train loss 4.4174 | Val loss 5.2057 | Tokens seen 100,081,664
+Past milestone but not yet under threshold: train loss 4.4174, val loss 5.2057; continuing training.
+Epoch 3/20 | Step 24,435 | Train loss 4.3768 | Val loss 5.2067 | Tokens seen 100,085,760
+Past milestone but not yet under threshold: train loss 4.3768, val loss 5.2067; continuing training.
+Epoch 3/20 | Step 24,436 | Train loss 4.5283 | Val loss 5.2081 | Tokens seen 100,089,856
+Past milestone but not yet under threshold: train loss 4.5283, val loss 5.2081; continuing training.
+Epoch 3/20 | Step 24,437 | Train loss 4.3875 | Val loss 5.2092 | Tokens seen 100,093,952
+Past milestone but not yet under threshold: train loss 4.3875, val loss 5.2092; continuing training.
+Epoch 3/20 | Step 24,438 | Train loss 4.4390 | Val loss 5.2101 | Tokens seen 100,098,048
+Past milestone but not yet under threshold: train loss 4.4390, val loss 5.2101; continuing training.
+Epoch 3/20 | Step 24,439 | Train loss 4.5289 | Val loss 5.2108 | Tokens seen 100,102,144
+Past milestone but not yet under threshold: train loss 4.5289, val loss 5.2108; continuing training.
+Epoch 3/20 | Step 24,440 | Train loss 4.5688 | Val loss 5.2102 | Tokens seen 100,106,240
+Past milestone but not yet under threshold: train loss 4.5688, val loss 5.2102; continuing training.
+Epoch 3/20 | Step 24,441 | Train loss 4.5157 | Val loss 5.2104 | Tokens seen 100,110,336
+Past milestone but not yet under threshold: train loss 4.5157, val loss 5.2104; continuing training.
+Epoch 3/20 | Step 24,442 | Train loss 4.5682 | Val loss 5.2106 | Tokens seen 100,114,432
+Past milestone but not yet under threshold: train loss 4.5682, val loss 5.2106; continuing training.
+Epoch 3/20 | Step 24,443 | Train loss 4.4397 | Val loss 5.2101 | Tokens seen 100,118,528
+Past milestone but not yet under threshold: train loss 4.4397, val loss 5.2101; continuing training.
+Epoch 3/20 | Step 24,444 | Train loss 4.3954 | Val loss 5.2093 | Tokens seen 100,122,624
+Past milestone but not yet under threshold: train loss 4.3954, val loss 5.2093; continuing training.
+Epoch 3/20 | Step 24,445 | Train loss 4.3328 | Val loss 5.2086 | Tokens seen 100,126,720
+Past milestone but not yet under threshold: train loss 4.3328, val loss 5.2086; continuing training.
+Epoch 3/20 | Step 24,446 | Train loss 4.4964 | Val loss 5.2095 | Tokens seen 100,130,816
+Past milestone but not yet under threshold: train loss 4.4964, val loss 5.2095; continuing training.
+Epoch 3/20 | Step 24,447 | Train loss 4.5047 | Val loss 5.2121 | Tokens seen 100,134,912
+Past milestone but not yet under threshold: train loss 4.5047, val loss 5.2121; continuing training.
+Epoch 3/20 | Step 24,448 | Train loss 4.5571 | Val loss 5.2150 | Tokens seen 100,139,008
+Past milestone but not yet under threshold: train loss 4.5571, val loss 5.2150; continuing training.
+Epoch 3/20 | Step 24,449 | Train loss 4.6815 | Val loss 5.2174 | Tokens seen 100,143,104
+Past milestone but not yet under threshold: train loss 4.6815, val loss 5.2174; continuing training.
+Epoch 3/20 | Step 24,450 | Train loss 4.5505 | Val loss 5.2196 | Tokens seen 100,147,200
+Past milestone but not yet under threshold: train loss 4.5505, val loss 5.2196; continuing training.
+slurmstepd: error: *** JOB 76151 ON rtx8000 CANCELLED AT 2026-04-13T14:43:40 ***

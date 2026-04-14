@@ -1,0 +1,5 @@
+Input: 太阳照常升起。
+Trained wikizh_tokenizer: [20584, 10687, 7459, 46110, 3484] ['太阳', '照', '常', '升起', '。']
+Original GPT-2 ids: [13783, 103, 165, 246, 111, 163, 227, 100, 30585, 116, 39355, 229, 164, 113, 115, 16764]
+Original GPT-2 raw tokens: ['å¤', 'ª', 'é', 'ĺ', '³', 'ç', 'ħ', '§', 'å¸', '¸', 'åį', 'ĩ', 'è', 'µ', '·', 'ãĢĤ']
+Note: GPT-2 is byte-level; many Chinese bytes are split across tokens, so standalone token decoding can look garbled.

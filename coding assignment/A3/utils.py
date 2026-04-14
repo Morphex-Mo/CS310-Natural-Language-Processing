@@ -10,10 +10,65 @@
 # Adopted by Yang Xu (innerfirexy@gmail.com) for CS310-NLP course labs at SUSTech
 
 
+import glob
+import os
+
 import tiktoken
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
+
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
+
+
+def read_text_file(file_path):
+    """Read text data from a file."""
+    with open(file_path, "r", encoding="utf-8") as file:
+        text_data = file.read()
+    return text_data
+
+
+def read_data_from_path(data_path):
+    """
+    Read data from a file or directory.
+    
+    If data_path is a file, read it directly.
+    If data_path is a directory, recursively read all .txt files and concatenate.
+    
+    Args:
+        data_path: Path to a file or directory containing text files
+        
+    Returns:
+        Concatenated text data
+    """
+    if os.path.isfile(data_path):
+        print(f"Reading single file: {data_path}")
+        return read_text_file(data_path)
+    elif os.path.isdir(data_path):
+        print(f"Reading all .txt files from directory: {data_path}")
+        # Find all .txt files recursively
+        pattern = os.path.join(data_path, "**/*.txt")
+        txt_files = glob.glob(pattern, recursive=True)
+        txt_files.sort()
+        
+        if not txt_files:
+            raise ValueError(f"No .txt files found in directory: {data_path}")
+        
+        print(f"Found {len(txt_files)} text files")
+        
+        # Read and concatenate all files
+        all_texts = []
+        for i, file_path in enumerate(txt_files, 1):
+            print(f"  Reading file {i}/{len(txt_files)}: {file_path}")
+            text = read_text_file(file_path)
+            all_texts.append(text)
+            # Add separator between files
+            all_texts.append(" <|endoftext|> ")
+        
+        return "".join(all_texts)
+    else:
+        raise ValueError(f"Path does not exist or is not a file/directory: {data_path}")
 
 
 class GPTDatasetV1(Dataset):
@@ -22,7 +77,19 @@ class GPTDatasetV1(Dataset):
         self.target_ids = []
 
         # Tokenize the entire text
-        token_ids = tokenizer.encode(txt, allowed_special={"<|endoftext|>"})
+        # Support both tiktoken and HuggingFace tokenizers
+        if hasattr(tokenizer, 'encode'):
+            try:
+                # tiktoken style - has allowed_special parameter
+                token_ids = tokenizer.encode(txt, allowed_special={"<|endoftext|>"})
+            except TypeError:
+                # HuggingFace tokenizers style - no allowed_special parameter
+                encoded = tokenizer.encode(txt)
+                token_ids = encoded.ids if hasattr(encoded, 'ids') else encoded
+        else:
+            # HuggingFace tokenizers style
+            encoded = tokenizer.encode(txt)
+            token_ids = encoded.ids if hasattr(encoded, 'ids') else encoded
 
         # Use a sliding window to chunk the book into overlapping sequences of max_length
         for i in range(0, len(token_ids) - max_length, stride):
@@ -38,10 +105,11 @@ class GPTDatasetV1(Dataset):
         return self.input_ids[idx], self.target_ids[idx]
 
 
-def create_dataloader_v1(txt, batch_size=4, max_length=256,
+def create_dataloader_v1(txt, tokenizer=None, batch_size=4, max_length=256,
                          stride=128, shuffle=True, drop_last=True, num_workers=0):
-    # Initialize the tokenizer
-    tokenizer = tiktoken.get_encoding("gpt2")
+    # Initialize the tokenizer if not provided
+    if tokenizer is None:
+        tokenizer = tiktoken.get_encoding("gpt2")
 
     # Create dataset
     dataset = GPTDatasetV1(txt, tokenizer, max_length, stride)
@@ -205,6 +273,140 @@ class GPTModel(nn.Module):
         return logits
 
 
+def calc_loss_batch(input_batch, target_batch, model, device):
+    """
+    Calculate the cross-entropy loss of a given batch
+    """
+    input_batch, target_batch = input_batch.to(device), target_batch.to(device)
+    ### START YOUR CODE ###
+    # Run forward pass to get the logits, and then compute the loss
+    logits = model(input_batch)
+    loss = torch.nn.functional.cross_entropy(logits.flatten(0, 1), target_batch.flatten())
+    ### END YOUR CODE
+    return loss
+
+
+def calc_loss_loader(data_loader, model, device, num_batches=None):
+    """
+    Calculate the average loss for a user-specified number of batches in a data loader
+    """
+    total_loss = 0.0
+
+    if len(data_loader) == 0:
+        return float("nan")
+    elif num_batches is None:
+        num_batches = len(data_loader)
+    else:
+        # Reduce the number of batches to match the total number of batches in the data loader
+        # if num_batches exceeds the number of batches in the data loader
+        num_batches = min(num_batches, len(data_loader))
+
+    for i, (input_batch, target_batch) in enumerate(data_loader):
+        if i < num_batches:
+            ### START YOUR CODE ###
+            # Call calc_loss_batch to get the loss, and then add it to the total loss
+            loss = calc_loss_batch(input_batch, target_batch, model, device)
+            total_loss += loss.item()
+            ### END YOUR CODE ###
+        else:
+            break
+    return total_loss / num_batches
+
+
+def text_to_token_ids(text, tokenizer):
+    # Support both tiktoken and HuggingFace tokenizers
+    if hasattr(tokenizer, 'encode'):
+        try:
+            # tiktoken style - has allowed_special parameter
+            encoded = tokenizer.encode(text, allowed_special={'<|endoftext|>'})
+        except TypeError:
+            # HuggingFace tokenizers style - no allowed_special parameter
+            encoded_result = tokenizer.encode(text)
+            encoded = encoded_result.ids if hasattr(encoded_result, 'ids') else encoded_result
+    else:
+        # HuggingFace tokenizers style
+        encoded_result = tokenizer.encode(text)
+        encoded = encoded_result.ids if hasattr(encoded_result, 'ids') else encoded_result
+    encoded_tensor = torch.tensor(encoded).unsqueeze(0) # add batch dimension
+    return encoded_tensor
+
+def token_ids_to_text(token_ids, tokenizer):
+    flat = token_ids.squeeze(0) # remove batch dimension
+    flat_list = flat.tolist()
+    # Support both tiktoken and HuggingFace tokenizers
+    if hasattr(tokenizer, 'decode'):
+        # tiktoken style - decode takes a list
+        return tokenizer.decode(flat_list)
+    else:
+        # HuggingFace tokenizers style
+        return tokenizer.decode(flat_list)
+
+def generate_text_simple(model, idx, max_new_tokens, context_size):
+    # idx is (B, T) array of indices in the current context
+    for _ in range(max_new_tokens):
+        # Crop current context if it exceeds the supported context size
+        # E.g., if LLM supports only 5 tokens, and the context size is 10
+        # then only the last 5 tokens are used as context
+        idx_cond = idx[:, -context_size:]
+        # Get the predictions
+        with torch.no_grad():
+            logits = model(idx_cond)
+        # Focus only on the last time step
+        # (batch, n_token, vocab_size) becomes (batch, vocab_size)
+        logits = logits[:, -1, :]
+
+        # Get the idx of the vocab entry with the highest logits value
+        idx_next = torch.argmax(logits, dim=-1, keepdim=True)  # (batch, 1)
+        idx = torch.cat((idx, idx_next), dim=1)  # (batch, n_tokens+1)
+    return idx
+
+def generate_and_print_sample(model, tokenizer, device, start_context):
+    model.eval()
+    context_size = model.pos_emb.weight.shape[0]
+    encoded = text_to_token_ids(start_context, tokenizer).to(device)
+    with torch.no_grad():
+        token_ids = generate_text_simple(
+            model=model, idx=encoded,
+            max_new_tokens=50, context_size=context_size
+        )
+    decoded_text = token_ids_to_text(token_ids, tokenizer)
+    print(decoded_text.replace("\n", " "))  # Compact print format
+    model.train()
+
+
+def evaluate_model(model, train_loader, val_loader, device, eval_iter):
+    model.eval()
+    with torch.no_grad():
+        ### START YOUR CODE ###
+        # Call calc_loss_loader on train_loader and val_loader, respectively (with the specified num_batches)
+        train_loss = calc_loss_loader(train_loader, model, device, num_batches=eval_iter)
+        val_loss = calc_loss_loader(val_loader, model, device, num_batches=eval_iter)
+        ### END YOUR CODE ###
+    model.train()
+    return train_loss, val_loss
+
+
+def plot_losses(epochs_seen, tokens_seen, train_losses, val_losses):
+    fig, ax1 = plt.subplots(figsize=(5, 3))
+
+    # Plot training and validation loss against epochs
+    ax1.plot(epochs_seen, train_losses, label="Training loss")
+    ax1.plot(epochs_seen, val_losses, linestyle="-.", label="Validation loss")
+    ax1.set_xlabel("Epochs")
+    ax1.set_ylabel("Loss")
+    ax1.legend(loc="upper right")
+    ax1.xaxis.set_major_locator(MaxNLocator(integer=True))  # only show integer labels on x-axis
+
+    # Create a second x-axis for tokens seen
+    ax2 = ax1.twiny()  # Create a second x-axis that shares the same y-axis
+    ax2.plot(tokens_seen, train_losses, alpha=0)  # Invisible plot for aligning ticks
+    ax2.set_xlabel("Tokens seen")
+
+    fig.tight_layout()  # Adjust layout to make room
+    plt.savefig("loss.pdf")
+    plt.show()
+
+
 if __name__ == "__main__":
 
     GPT_CONFIG_124M = {
@@ -214,7 +416,7 @@ if __name__ == "__main__":
         "n_heads": 12,           # Number of attention heads
         "n_layers": 12,          # Number of layers
         "drop_rate": 0.1,        # Dropout rate
-        "qkv_bias": False        # Query-Key-Value bias
+        "qkv_bias": True         # Query-Key-Value bias
     }
 
     torch.manual_seed(123)

@@ -1,0 +1,47 @@
+{
+  "root": "/home/xuyang_lab/cse12212752/A3-code/CS310-Natural-Language-Processing/coding assignment/A3",
+  "required_files": {
+    "preprocess_script": "PASS",
+    "tokenizer_train_script": "PASS",
+    "compare_script": "PASS",
+    "pretrain_script": "PASS",
+    "tokenizer_json": "PASS",
+    "corpus": "PASS"
+  },
+  "run_pretrain": {
+    "status": "PASS",
+    "checks": {
+      "has_global_step": true,
+      "increments_global_step": true,
+      "tracks_tokens_seen": true,
+      "supports_eval_freq": true,
+      "supports_ckpt_freq": true,
+      "has_target_tokens": true,
+      "has_target_val_loss": true
+    }
+  },
+  "model_candidates": [
+    "/home/xuyang_lab/cse12212752/A3-code/CS310-Natural-Language-Processing/coding assignment/A3/model_checkpoints_smoke2/model_final.pth"
+  ],
+  "curve_candidates": [
+    "/home/xuyang_lab/cse12212752/A3-code/CS310-Natural-Language-Processing/coding assignment/A3/model_checkpoints_smoke2/loss_curve.pdf"
+  ],
+  "has_full_training_model": false,
+  "has_full_training_curve": false,
+  "huggingface_reachable": false,
+  "report_artifact": {
+    "has_markdown_report": true,
+    "has_pdf_report": true
+  },
+  "report_placeholders": {
+    "name_placeholder": false,
+    "id_placeholder": false,
+    "token_to_fill": false
+  },
+  "ready_for_submission": false,
+  "blockers": [
+    "Only smoke model artifact found; full training model artifact missing.",
+    "Only smoke loss curve found; full training curve missing.",
+    "Current node cannot reach huggingface.co; compare_tokenizers.py screenshot may require a network-enabled node."
+  ]
+}

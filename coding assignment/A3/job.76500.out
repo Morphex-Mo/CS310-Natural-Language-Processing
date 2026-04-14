@@ -1,0 +1,28 @@
+Host: titanrtx01
+SLURM_JOB_ID: 76500
+CUDA_VISIBLE_DEVICES: 0
+GPU 0: NVIDIA TITAN RTX (UUID: GPU-ded63929-c31a-c7b5-26d2-2c3eba967188)
+pretrain_env_ok 2.5.1+cu121
+cuda_available True
+cuda_device_count 1
+cuda_device_0 NVIDIA TITAN RTX
+Loading tokenizer from: wikizh_tokenizer_whitespace.json
+Using device: cuda
+Total model parameters: 165,686,784 (165.69M)
+Checkpoints will be saved to: /home/xuyang_lab/cse12212752/A3-code/CS310-Natural-Language-Processing/coding assignment/A3/model_checkpoints
+
+Starting training...
+Using data fraction: 0.200 (89,950,602 chars sampled across the corpus)
+Data path: wikizh.txt
+Total text size: 89,950,616 characters
+Train/Val batches: 23,855/1,230
+Vocab size: 52,000
+Context length: 1024
+Batch size: 4
+Warmup steps: 732
+Minimum LR ratio: 0.2
+Gradient clip norm: 1.0
+Effective data_fraction: 0.200
+Effective train_ratio: 0.950
+Effective eval_iter: 8
+Epoch 1/4 | Step 100 | Train loss 9.3821 | Val loss 9.3566 | Tokens seen 409,600

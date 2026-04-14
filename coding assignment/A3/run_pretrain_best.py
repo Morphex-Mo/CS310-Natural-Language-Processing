@@ -95,6 +95,8 @@ def load_sampled_corpus(data_path, data_fraction=1.0, seed=123):
         with file_path.open("r", encoding="utf-8") as f:
             for line in f:
                 if not line.strip():
+                    # Preserve article boundary signal in the sampled corpus.
+                    selected_lines.append("<|endoftext|>")
                     total_lines += 1
                     continue
 
@@ -146,6 +148,10 @@ def train_model_simple(
     warmup_steps=1000,
     min_lr_ratio=0.1,
     max_grad_norm=1.0,
+    grad_accum_steps=1,
+    near_target_trigger=5.35,
+    near_target_lr_ratio=0.60,
+    near_target_eval_iter=20,
 ):
     """
     Simple training loop for GPT model.
@@ -184,7 +190,9 @@ def train_model_simple(
     start_time = time.time()
     criterion_met = None
     should_stop = False
+    milestone_reached_once = False
     
+    # Keep user-provided sampling ratio for reproducible training behavior.
     effective_data_fraction = data_fraction
 
     # Read text data
@@ -195,6 +203,11 @@ def train_model_simple(
             f"({len(text_data):,} chars sampled across the corpus)"
         )
 
+    # Use user-provided values so this script can faithfully reproduce prior successful runs.
+    grad_accum_steps = max(1, int(grad_accum_steps))
+    eval_iter = max(1, int(eval_iter))
+    near_target_eval_iter = max(eval_iter, int(near_target_eval_iter))
+    
     # Add end-of-text marker if not present
     if not text_data.endswith("<|endoftext|>"):
         text_data += "\n<|endoftext|>"
@@ -242,38 +255,67 @@ def train_model_simple(
     print(f"Warmup steps: {warmup_steps}")
     print(f"Minimum LR ratio: {min_lr_ratio}")
     print(f"Gradient clip norm: {max_grad_norm}")
+    print(f"Gradient accumulation: {grad_accum_steps}")
+    print(f"Near-target trigger: {near_target_trigger}")
+    print(f"Near-target LR floor ratio: {near_target_lr_ratio}")
+    print(f"Near-target eval_iter: {near_target_eval_iter}")
     print(f"Effective data_fraction: {effective_data_fraction:.3f}")
     print(f"Effective train_ratio: {train_ratio:.3f}")
     print(f"Effective eval_iter: {eval_iter}")
+
+    base_lr = optimizer.param_groups[0]["lr"]
+    near_target_mode = False
     
     try:
         for epoch in range(n_epochs):
             model.train()
+            optimizer.zero_grad(set_to_none=True)
             for input_batch, target_batch in train_loader:
-                optimizer.zero_grad()
                 loss = calc_loss_batch(input_batch, target_batch, model, device)
-                loss.backward()
-                if max_grad_norm is not None and max_grad_norm > 0:
-                    torch.nn.utils.clip_grad_norm_(model.parameters(), max_grad_norm)
-                optimizer.step()
-                lr_scheduler.step()
+                (loss / grad_accum_steps).backward()
+
+                should_step = (global_step + 1) % grad_accum_steps == 0
+                if should_step:
+                    if max_grad_norm is not None and max_grad_norm > 0:
+                        torch.nn.utils.clip_grad_norm_(model.parameters(), max_grad_norm)
+                    optimizer.step()
+                    lr_scheduler.step()
+                    if near_target_mode:
+                        lr_floor = base_lr * near_target_lr_ratio
+                        for group in optimizer.param_groups:
+                            if group["lr"] < lr_floor:
+                                group["lr"] = lr_floor
+                    optimizer.zero_grad(set_to_none=True)
 
                 tokens_seen += input_batch.numel()
                 global_step += 1
 
                 milestone_reached = target_tokens is not None and tokens_seen >= target_tokens
+                if milestone_reached:
+                    milestone_reached_once = True
+
                 if global_step % eval_freq == 0 or milestone_reached:
+                    eval_iter_to_use = near_target_eval_iter if near_target_mode else eval_iter
                     if len(val_loader) > 0:
                         train_loss, val_loss = evaluate_model(
                             model=model,
                             train_loader=train_loader,
                             val_loader=val_loader,
                             device=device,
-                            eval_iter=eval_iter,
+                            eval_iter=eval_iter_to_use,
                         )
                     else:
                         train_loss = loss.item()
                         val_loss = train_loss
+
+                    if val_loss <= near_target_trigger:
+                        if not near_target_mode:
+                            print(
+                                f"Entering near-target mode at val loss {val_loss:.4f}: "
+                                f"keeping LR >= {base_lr * near_target_lr_ratio:.2e} and "
+                                f"using eval_iter={near_target_eval_iter}."
+                            )
+                        near_target_mode = True
 
                     train_losses.append(train_loss)
                     val_losses.append(val_loss)
@@ -356,7 +398,7 @@ if __name__ == "__main__":
         help="Directory where the model checkpoints will be saved",
     )
     parser.add_argument(
-        "--n_epochs", type=int, default=5, help="Number of epochs to train the model"
+        "--n_epochs", type=int, default=3, help="Number of epochs to train the model"
     )
     parser.add_argument(
         "--tokenizer",
@@ -373,17 +415,17 @@ if __name__ == "__main__":
     parser.add_argument(
         "--save_ckpt_freq",
         type=int,
-        default=1000,
+        default=5000,
         help="Frequency of saving model checkpoints during training (in steps)",
     )
     parser.add_argument(
-        "--lr", type=float, default=2.5e-4, help="Learning rate for the optimizer"
+        "--lr", type=float, default=1e-4, help="Learning rate for the optimizer"
     )
     parser.add_argument(
-        "--batch_size", type=int, default=4, help="Batch size for training"
+        "--batch_size", type=int, default=8, help="Batch size for training"
     )
     parser.add_argument(
-        "--train_ratio", type=float, default=0.95, help="Ratio of data for training (rest for validation)"
+        "--train_ratio", type=float, default=0.90, help="Ratio of data for training (rest for validation)"
     )
     parser.add_argument(
         "--target_tokens",
@@ -405,13 +447,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data_fraction",
         type=float,
-        default=0.08,
+        default=1.0,
         help="Fraction of loaded text used for training/validation split (0, 1]",
     )
     parser.add_argument(
         "--warmup_steps",
         type=int,
-        default=800,
+        default=1200,
         help="Linear warmup steps for the learning-rate schedule",
     )
     parser.add_argument(
@@ -433,15 +475,39 @@ if __name__ == "__main__":
         help="Number of batches used for each train/val loss evaluation",
     )
     parser.add_argument(
+        "--grad_accum_steps",
+        type=int,
+        default=1,
+        help="Gradient accumulation steps to reduce optimization noise",
+    )
+    parser.add_argument(
+        "--near_target_trigger",
+        type=float,
+        default=5.35,
+        help="Enable near-target mode when val loss is below this threshold",
+    )
+    parser.add_argument(
+        "--near_target_lr_ratio",
+        type=float,
+        default=0.60,
+        help="Minimum LR ratio (relative to base LR) while in near-target mode",
+    )
+    parser.add_argument(
+        "--near_target_eval_iter",
+        type=int,
+        default=20,
+        help="Evaluation batches used while in near-target mode",
+    )
+    parser.add_argument(
         "--drop_rate",
         type=float,
-        default=0.0,
+        default=0.1,
         help="Dropout rate used by the GPT model",
     )
     parser.add_argument(
         "--weight_decay",
         type=float,
-        default=0.05,
+        default=0.1,
         help="Weight decay for AdamW optimizer",
     )
     parser.add_argument(
@@ -499,10 +565,6 @@ if __name__ == "__main__":
     
     # Initialize model
     torch.manual_seed(123)
-    if torch.cuda.is_available():
-        torch.cuda.manual_seed_all(123)
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
     model = GPTModel(GPT_CONFIG_124M)
     model.to(device)
     
@@ -541,6 +603,10 @@ if __name__ == "__main__":
         min_lr_ratio=args.min_lr_ratio,
         max_grad_norm=args.max_grad_norm,
         eval_iter=args.eval_iter,
+        grad_accum_steps=args.grad_accum_steps,
+        near_target_trigger=args.near_target_trigger,
+        near_target_lr_ratio=args.near_target_lr_ratio,
+        near_target_eval_iter=args.near_target_eval_iter,
     )
 
     ### START YOUR CODE ###

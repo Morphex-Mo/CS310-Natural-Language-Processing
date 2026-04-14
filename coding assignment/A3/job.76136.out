@@ -1,0 +1,298 @@
+tokenizer_env_ok
+Tokenizer already exists: wikizh_tokenizer_whitespace.json (skip retraining)
+Running compare_tokenizers with HF_ENDPOINT=https://hf-mirror.com
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2310>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 9c0614b1-1497-4f5d-8ea3-77a6f2827541)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/tokenizer_config.json
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2340>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 34b97eae-75c5-4d5d-abda-4d0263cb67bb)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/tokenizer_config.json
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2250>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: d3fea4f9-d600-4d39-8ab1-2454e8adea8c)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/tokenizer_config.json
+Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2370>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 3bfe68fc-dddf-449b-b956-7b4dbcf73dc3)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/tokenizer_config.json
+Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da23a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 7111303d-a31a-43a6-9867-91deaa2f7483)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/tokenizer_config.json
+Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2310>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: a90dc992-c2b7-4c8c-bbb6-adbb9b1639eb)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/tokenizer_config.json
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2e50>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: be86d24e-173c-41aa-a3ea-9e1e5fef5c9e)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2e80>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 6f16f265-425a-4652-9df9-bc2dc635a517)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2eb0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: b96b8da3-96ba-467c-bb74-ab3910dc5fbf)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2f10>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 7c26a58e-d31f-4c11-88b2-a4dde6ab0316)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2e50>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: b0aa94ca-a1a3-4083-ae6f-aba0ba762148)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2e80>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: c7097ce2-999c-4bd8-acf3-2476bc7dc391)')' thrown while requesting HEAD https://hf-mirror.com/gpt2/resolve/main/config.json
+Traceback (most recent call last):
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f4c75da2e80>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/requests/adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2e80>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1550, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1467, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 306, in _request_wrapper
+    response = http_backoff(method=method, url=url, **params)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 326, in http_backoff
+    raise err
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 307, in http_backoff
+    response = session.request(method=method, url=url, **kwargs)
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/requests/sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/requests/sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 96, in send
+    return super().send(request, *args, **kwargs)
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4c75da2e80>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: c7097ce2-999c-4bd8-acf3-2476bc7dc391)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/utils/hub.py", line 479, in cached_files
+    hf_hub_download(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1014, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1121, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1665, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xuyang_lab/cse12212752/A3-code/CS310-Natural-Language-Processing/coding assignment/A3/compare_tokenizers.py", line 8, in <module>
+    tokenizer_gpt2_original = AutoTokenizer.from_pretrained("gpt2")
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py", line 1109, in from_pretrained
+    config = AutoConfig.from_pretrained(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/models/auto/configuration_auto.py", line 1332, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/configuration_utils.py", line 662, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/configuration_utils.py", line 721, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/utils/hub.py", line 322, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/utils/hub.py", line 553, in cached_files
+    raise OSError(
+OSError: We couldn't connect to 'https://hf-mirror.com' to load the files, and couldn't find them in the cached files.
+Check your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+compare_tokenizers failed on mirror, retrying with official endpoint...
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2dc10>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 00471c5b-0ce7-4d30-9e85-8c3cfd706721)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2dc40>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 493d0452-c7e5-4d29-a1d2-59ec42447b5a)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2d520>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: c68fb26f-a924-493c-9117-f45a5c66b0d7)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json
+Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2dc70>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 6f9b928e-fce2-46a8-ab0a-f4f52906072a)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json
+Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2dca0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 1b80a3de-e38f-4bb4-9bc4-fa04e4091a33)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json
+Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2dc10>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 081b1fbf-ff9d-485f-8bd6-828bdeee4784)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2d640>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: fcd76bc7-13a0-44dc-a182-529575fc3e16)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2d6a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: 6a7791f5-71eb-4c83-91d5-edeee1031440)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2d730>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: d501b42f-9887-4cb3-bd5e-a3e5a8d86548)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2d7f0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: c5a0f498-b1bf-452e-a5b3-c9ee10829093)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2d640>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: e2071426-3fac-4149-b461-de1cbc051988)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2d6a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: baf3f7c9-9966-4814-9013-bb36a565bf17)')' thrown while requesting HEAD https://huggingface.co/gpt2/resolve/main/config.json
+Traceback (most recent call last):
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fb2a6d2d6a0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/requests/adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2d6a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1550, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1467, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 306, in _request_wrapper
+    response = http_backoff(method=method, url=url, **params)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 326, in http_backoff
+    raise err
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 307, in http_backoff
+    response = session.request(method=method, url=url, **kwargs)
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/requests/sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/requests/sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 96, in send
+    return super().send(request, *args, **kwargs)
+  File "/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /gpt2/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2a6d2d6a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"), '(Request ID: baf3f7c9-9966-4814-9013-bb36a565bf17)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/utils/hub.py", line 479, in cached_files
+    hf_hub_download(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1014, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1121, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1665, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xuyang_lab/cse12212752/A3-code/CS310-Natural-Language-Processing/coding assignment/A3/compare_tokenizers.py", line 8, in <module>
+    tokenizer_gpt2_original = AutoTokenizer.from_pretrained("gpt2")
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py", line 1109, in from_pretrained
+    config = AutoConfig.from_pretrained(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/models/auto/configuration_auto.py", line 1332, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/configuration_utils.py", line 662, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/configuration_utils.py", line 721, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/utils/hub.py", line 322, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages/transformers/utils/hub.py", line 553, in cached_files
+    raise OSError(
+OSError: We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.
+Check your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+WARNING: compare_tokenizers failed on both mirror and official endpoint.
+progress lines=200,000 tokens=8,098,168 elapsed=5.1s
+progress lines=400,000 tokens=15,445,385 elapsed=9.8s
+progress lines=600,000 tokens=22,261,355 elapsed=14.1s
+progress lines=800,000 tokens=29,046,585 elapsed=18.3s
+progress lines=1,000,000 tokens=35,706,503 elapsed=22.5s
+progress lines=1,200,000 tokens=42,228,815 elapsed=26.7s
+progress lines=1,400,000 tokens=48,636,208 elapsed=30.7s
+progress lines=1,600,000 tokens=54,845,743 elapsed=34.6s
+progress lines=1,800,000 tokens=60,622,126 elapsed=38.3s
+progress lines=2,000,000 tokens=66,212,071 elapsed=41.9s
+progress lines=2,200,000 tokens=72,351,799 elapsed=45.7s
+progress lines=2,400,000 tokens=78,138,577 elapsed=49.4s
+progress lines=2,600,000 tokens=83,802,639 elapsed=53.0s
+progress lines=2,800,000 tokens=89,377,994 elapsed=56.6s
+progress lines=3,000,000 tokens=95,111,622 elapsed=60.3s
+progress lines=3,200,000 tokens=100,409,376 elapsed=63.7s
+progress lines=3,400,000 tokens=105,874,666 elapsed=67.2s
+progress lines=3,600,000 tokens=110,828,498 elapsed=70.5s
+progress lines=3,800,000 tokens=116,414,952 elapsed=74.0s
+progress lines=4,000,000 tokens=121,696,201 elapsed=77.4s
+progress lines=4,200,000 tokens=127,187,116 elapsed=80.9s
+progress lines=4,400,000 tokens=132,695,002 elapsed=84.5s
+progress lines=4,600,000 tokens=138,463,236 elapsed=88.1s
+progress lines=4,800,000 tokens=143,807,590 elapsed=91.6s
+progress lines=5,000,000 tokens=149,191,205 elapsed=95.1s
+progress lines=5,200,000 tokens=152,486,344 elapsed=97.4s
+progress lines=5,400,000 tokens=155,101,239 elapsed=99.3s
+progress lines=5,600,000 tokens=159,408,316 elapsed=102.3s
+progress lines=5,800,000 tokens=163,579,506 elapsed=105.1s
+progress lines=6,000,000 tokens=166,321,215 elapsed=107.3s
+progress lines=6,200,000 tokens=170,483,652 elapsed=110.1s
+progress lines=6,400,000 tokens=173,426,433 elapsed=112.3s
+progress lines=6,600,000 tokens=178,386,374 elapsed=115.6s
+progress lines=6,800,000 tokens=183,238,118 elapsed=118.8s
+progress lines=7,000,000 tokens=188,702,525 elapsed=122.3s
+progress lines=7,200,000 tokens=194,079,356 elapsed=125.8s
+progress lines=7,400,000 tokens=199,645,784 elapsed=129.5s
+progress lines=7,600,000 tokens=204,892,954 elapsed=132.9s
+progress lines=7,800,000 tokens=210,201,821 elapsed=136.4s
+progress lines=8,000,000 tokens=215,733,514 elapsed=140.0s
+progress lines=8,200,000 tokens=220,763,212 elapsed=143.4s
+progress lines=8,400,000 tokens=225,993,291 elapsed=146.8s
+progress lines=8,600,000 tokens=231,420,121 elapsed=150.4s
+progress lines=8,800,000 tokens=236,740,447 elapsed=153.9s
+progress lines=9,000,000 tokens=241,562,265 elapsed=157.1s
+progress lines=9,200,000 tokens=246,839,069 elapsed=160.6s
+progress lines=9,400,000 tokens=252,403,015 elapsed=164.2s
+{
+  "input": "wikizh.txt",
+  "tokenizer": "wikizh_tokenizer_whitespace.json",
+  "total_lines": 9569010,
+  "nonempty_lines": 5338162,
+  "nonspace_chars": 453537116,
+  "tokens": 256609695,
+  "elapsed_sec": 167.025,
+  "full_scan": true
+}
