@@ -2,7 +2,7 @@
 
 Name: [莫丰源]
 Student ID: [12311805]
-Date: 2026-04-14
+Date: 2026-04-15
 
 ## 0. Summary
 
@@ -11,12 +11,6 @@ Date: 2026-04-14
 2. 在该语料上从零训练 BPE tokenizer
 3. 使用该 tokenizer 预训练 GPT-2 (124M 配置) 并记录训练曲线与损失
 
-目标验收标准：
-- 在约 100M tokens 处，Validation Loss < 5.0
-
-当前状态：
-- Requirement 1-4 已完成并有证据文件。
-- 本报告仅基于三次实验结果：76136、76138、76216。
 
 ## 1) Data Extraction and Preprocess (5 pts)
 
@@ -63,11 +57,11 @@ Tokenizer 文件：
 
 证据文件：
 - ![job.76136.out](job.76136.png)（记录在线 compare 失败与网络受限）
-- [job.76138.out](job.76138.out)（离线 compare 专用任务日志）
-- [compare_output_offline_job.txt](compare_output_offline_job.txt)（76138 对应输出）
-- [compare_output.txt](compare_output.txt)（同内容备份）
+- [job.76138.out](compare_output_offline_job.png)（离线 compare 专用任务日志）
+- ![compare_output_offline_job.txt](compare_output_offline_job.png)
+- [compare_output.txt](compare_output_offline_job.png)（同内容备份）
 - [compare_tokenizers_readable.py](compare_tokenizers_readable.py)（可读版对比脚本）
-- [compare_readable_output.txt](compare_readable_output.txt)（可读版输出）
+- ![compare_readable_output.txt](compare_readable_output.png)
 
 关键现象（来自 compare_output.txt）：
 - 训练 tokenizer 能把中文按词/短语切分（例如“太阳”“照”“常”“升起”）
@@ -204,9 +198,9 @@ python run_pretrain.py \
 - [token_stats_full.json](token_stats_full.json)
 
 4) Requirement 4 训练过程与结果
-- [job.76216.out](job.76216.out)
+- ![job.76216.out](job.76216.png)
 - [model_checkpoints_best/model_final.pth](model_checkpoints_best/model_final.pth)
-- [model_checkpoints_best/loss_curve.pdf](model_checkpoints_best/loss_curve.pdf)
+- ![model_checkpoints_best/loss_curve.pdf](loss_curve.png)
 
 
 
