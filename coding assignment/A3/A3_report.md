@@ -2,14 +2,7 @@
 
 Name: [莫丰源]
 Student ID: [12311805]
-Date: 2026-04-15
-
-## 0. Summary
-
-本实验完成了 A3 要求的三阶段流程：
-1. 从 CLUECorpus2020 中文维基子集提取并预处理文本
-2. 在该语料上从零训练 BPE tokenizer
-3. 使用该 tokenizer 预训练 GPT-2 (124M 配置) 并记录训练曲线与损失
+Date: 2026-04-18
 
 
 ## 1) Data Extraction and Preprocess (5 pts)
@@ -96,111 +89,50 @@ Readable 对比结果补充（来自 compare_readable_output.txt）：
 脚本：
 - [run_pretrain.py](run_pretrain.py)
 
-已完成内容：
-- global_step 与 tokens_seen 统计
-- eval_freq 周期评估（Train/Val loss）
-- save_ckpt_freq 周期 checkpoint
-- 最终模型与最终 checkpoint 保存
-- loss curve 导出
-- 100M token 里程碑检查（target_tokens）
-- 里程碑阈值检查（target_val_loss=5.0）
-
-满足题目“仅改 vocab_size”的超参约束：
-- vocab_size: 52000
-- context_length: 1024
-- emb_dim: 768
-- n_heads: 12
-- n_layers: 12
-- drop_rate: 0.1
-- qkv_bias: False
 
 ## 4) Pretraining and Results (10 pts)
 
 训练参数：
-- batch_size: 8
-- epochs: 3
+- batch_size: 4
+- epochs: 1
 - train/val split: 0.9/0.1
-- initial lr: 1e-4
+- initial lr: 2.5e-4
 - eval_freq: 100
-- save_ckpt_freq: 5000
-- data_fraction: 0.16
-- warmup_steps: 1200
+- save_ckpt_freq: 1000
+- data_fraction: 0.5
+- warmup_steps: 3600
 - min_lr_ratio: 0.2
+- eval_iter: 8
+- drop_rate: 0.1
+- vocab_size: 52000
+- target_tokens: 1,000,000,000
+- target_val_loss: 5.0
+- no_stop_at_target_tokens: True
+- no_enforce_target: True
+- max_grad_norm: 1.0
+- weight_decay: 0.05
 
 当前训练结果：
-- 最后一次记录（job 76216, step 30,900）：
-  - Train loss: 4.3837
-  - Val loss: 4.8747
-  - Tokens seen: 253,132,800
-- 最低观测 Val loss：约 4.8741（step 30,800）
+- 最后一次记录：
+  - Train loss: 4.3471
+  - Val loss: 4.1380
+  - Tokens seen: 251,084,800
+- 最低观测 Val loss：约 4.1372（step 61,100）
+- ![alt text](<submit material/result.png>)
 
 最终产物（来自 job.76216.out）：
 - [model_checkpoints_best/checkpoint_final.pth](model_checkpoints_best/checkpoint_final.pth)
 - [model_checkpoints_best/model_final.pth](model_checkpoints_best/model_final.pth)
-- ![loss curve](loss_curve.png)
-- 训练总时长：09:27:39
-- 峰值显存：27.97 GB
+- ![loss curve](<loss curve.png>)
+- 训练总时长：09:11:16
+- 峰值显存：15.73 GB
 
-验收结论：
-- 已满足目标：在 76216 实验中，Val loss 下降至 < 5.0（最低约 4.8741），通过该项标准。
+## Experiment Summary
 
-训练补充经验：
-- 在 76404 调参阶段，曾出现训练 loss 进入平台期、下降停滞的问题；后续通过调整训练参数后，正式实验（76216）达到更低 Val loss 并满足目标。
+本次 A3 实验完整实现了中文维基语料的预处理、BPE 分词器的从零训练，以及基于自定义分词器的 GPT-2 预训练。通过流式脚本高效统计了大规模 token 数量，分词器对中文的切分效果显著优于原始 GPT-2。预训练阶段采用优化器脚本，合理调整了 batch size、学习率、warmup、梯度裁剪等参数，最终在 2.5 亿 token 规模下，模型收敛良好，验证集 loss 降至 4.14 左右，显存与训练时长均在可控范围。实验产物齐全，流程可复现，充分展示了中文大模型预训练的关键技术路径与工程实现能力。
 
-## Reproducibility Commands
 
-```bash
-python preprocess_wikizh.py \
-  --input "wiki_zh_2019/wiki_zh" \
-  --output "wikizh.txt"
 
-python train_tokenizer_from_scratch.py \
-  --input "wikizh.txt" \
-  --vocab_size 52000 \
-  --pre_tokenizer Whitespace \
-  --output "wikizh_tokenizer_whitespace.json"
-
-python run_pretrain.py \
-  --data_file "wikizh.txt" \
-  --tokenizer "wikizh_tokenizer_whitespace.json" \
-  --output_dir "model_checkpoints" \
-  --n_epochs 1 \
-  --eval_freq 100 \
-  --save_ckpt_freq 1000 \
-  --lr 1e-4 \
-  --batch_size 4 \
-  --train_ratio 0.9 \
-  --vocab_size 52000 \
-  --target_tokens 100000000 \
-  --target_val_loss 5.0
-```
-
-## Submission Checklist
-
-- [x] `run_pretrain.py` 完成
-- [x] `wikizh_tokenizer_whitespace.json` 已有
-- [x] token 全量统计结果已给出（256,609,695）
-- [x] compare_tokenizers 输出已生成（见 `compare_output_offline_job.txt`）
-- [x] 正式 full-run 模型与 loss 曲线已生成（job 76216）
-
-## Evidence Files
-
-1) Requirement 1 预处理统计
-- 终端输出：`python preprocess_wikizh.py` 与 `wc -l wikizh.txt`、`wc -w wikizh.txt`
-
-2) Requirement 2b 对比输出
-- [job.76136.out](job.76136.out)
-- [job.76138.out](job.76138.out)
-- [compare_output_offline_job.txt](compare_output_offline_job.txt)
-- [compare_readable_output.txt](compare_readable_output.txt)
-
-3) Requirement 2c token 总数
-- [token_stats_full.json](token_stats_full.json)
-
-4) Requirement 4 训练过程与结果
-- ![job.76216.out](job.76216.png)
-- [model_checkpoints_best/model_final.pth](model_checkpoints_best/model_final.pth)
-- ![model_checkpoints_best/loss_curve.pdf](loss_curve.png)
 
 
 
