@@ -4,24 +4,27 @@
 
 ## 📚 课程内容
 
-本仓库包含以下内容：
+本仓库包含以下内容（已同步至当前目录结构）：
 
 ### 📝 作业 (Coding Assignments)
 - **A1**: 神经网络文本分类
   - 使用神经网络进行文本分类任务
-  - 数据集：train.jsonl, test.jsonl
+  - 数据集：`train.jsonl`, `test.jsonl`
   - 产出：模型权重、实验报告与提交材料
 
-- **A2**: Word2Vec词向量训练与调优
+- **A2**: Word2Vec 词向量训练与调优
   - 基于莎士比亚语料训练词向量
-  - 包含基础版与调优版notebook（`A2_w2v.ipynb`、`A2_w2v_tuned.ipynb`）
-  - 数据与评估：`shakespeare.txt`、`questions-words-shakespeare.csv`、多组embeddings文件
-  - 产出：实验报告与可视化结果
+  - 包含基础版与调优版 notebook（`A2_w2v.ipynb`、`A2_w2v_tuned.ipynb`）
+  - 数据与评估：`shakespeare.txt`、`questions-words-shakespeare.csv`、多组 embeddings 文件
 
 - **A3**: 分词器训练与预训练实验
   - 从零训练中文分词器并对比不同分词策略
   - 预训练脚本与实验对比：`train_tokenizer_from_scratch.py`、`compare_tokenizers.py`、`run_pretrain.py`
   - 数据：`wiki_zh_2019` 中文维基语料
+
+- **A4**: SFT / 指令微调 与 评估实验（已加入仓库）
+  - 包含用于微调/评估的大模型权重与脚本
+  - 示例文件位于 `coding assignment/A4/`
 
 ### 🧪 实验课 (Lab)
 - **Lab 1**: Python基础文本处理
@@ -106,74 +109,34 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ".vscode/latex_build_clean.p
 
 注意：第一个参数需精确到 `.tex` 所在子目录（本例为 `writing assignment/A2`）；如果使用相对路径，可能导致清理步骤无法命中目标文件。
 
-## 📂 目录结构
+## 📂 目录结构（已同步当前仓库）
 
 ```
 CS310-Natural-Language-Processing/
 ├── coding assignment/
 │   ├── A1/
-│   │   ├── A1 report.md
-│   │   ├── A1_nn.ipynb
-│   │   ├── best_advanced_model.pth
-│   │   ├── train.jsonl
-│   │   ├── test.jsonl
-│   │   └── submit_material/
-│   │       └── A1_nn.ipynb
-│   └── A2/
-│       ├── A2_w2v.ipynb
-│       ├── A2_w2v_tuned.ipynb
-│       ├── report.md
-│       ├── report.pdf
-│       ├── shakespeare.txt
-│       ├── questions-words-shakespeare.csv
-│       ├── embeddings.txt
-│       ├── embeddings_set1.txt
-│       ├── embeddings_set2_ember.txt
-│       ├── utils.py
-│       └── *.png
+│   ├── A2/
 │   ├── A3/
-│       ├── compare_tokenizers.py
-│       ├── train_tokenizer_from_scratch.py
-│       ├── run_pretrain.py
-│       ├── utils.py
-│       └── wiki_zh_2019/
-│           └── wiki_zh/...
+│   └── A4/
 ├── lab/
 │   ├── lab1/
-│   │   ├── lab1_text_processing.ipynb
-│   │   ├── text_classification_model.pth
-│   │   └── 三体3死神永生-刘慈欣.txt
 │   ├── lab2/
-│   │   ├── data_utils.py
-│   │   └── lab2_nn.ipynb
 │   ├── lab3/
-│   │   ├── lab3_w2v.ipynb
-│   │   ├── embeddings.txt
-│   │   ├── lunyu_20chapters.txt
-│   │   └── utils.py
 │   ├── lab4/
-│   │   ├── lab4_trm.ipynb
-│   │   └── utils.py
 │   ├── lab5/
-│   │   ├── lab5_bpe.ipynb
-│   │   ├── lab5_pretrain.ipynb
-│   │   ├── the-verdict.txt
-│   │   └── utils.py
 │   ├── lab6/
-│   │   ├── lab6_kv-cache.ipynb
-│   │   └── utils.py
-│   └── lab7/
-│       ├── lab7_decode.ipynb
-│       └── Qwen3-0.6B/
+│   ├── lab7/
+│   ├── lab8/
+│   └── lab9/
 ├── lecture/
-│   └── 01-basic_text_proc.pdf
 ├── writing assignment/
 │   └── A2/
-│       ├── A2_w2v_written_solution.tex
-│       ├── A2_w2v_written_solution.pdf
-│       └── A2_w2v_written.pdf
+├── proj/
+├── .vscode/
+├── .venv/
 ├── README_MAINTENANCE.md
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ## ⚠️ 学术诚信声明
@@ -192,6 +155,7 @@ CS310-Natural-Language-Processing/
 
 ## 📅 更新日志
 
+- **2026-04-28**: 执行 README 维护更新，更新 "Last Updated" 日期并补充维护建议与示例（参见 README_MAINTENANCE.md）
 - **2026-04-14**: 根据维护规范补充Lab 7内容，同步目录结构并更新日期
 - **2026-04-07**: 按维护规范更新 README；补充 A3 与 Lab6 内容，刷新目录结构与技术栈，更新日期
 - **2026-03-31**: 根据维护规范补充Lab 5说明，更新目录结构（含writing assignment），同步README日期
@@ -213,4 +177,4 @@ CS310-Natural-Language-Processing/
 ---
 
 **SUSTech CS310 - Natural Language Processing**  
-*Last Updated: 2026年4月14日*
+*Last Updated: 2026年4月28日*
