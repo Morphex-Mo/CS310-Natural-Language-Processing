@@ -65,6 +65,19 @@
   - 使用 `lab7_decode.ipynb` 进行推理与结果对比
   - 结合 `Qwen3-0.6B` 本地模型目录开展实验
 
+- **Lab 8**: 指令微调与SFT实战
+  - 练习使用指令数据集进行监督微调（SFT），包含数据准备、训练和评估流程
+  - 示例 notebook: `lab8_sft.ipynb`
+
+- **Lab 9**: 人类偏好对齐与评估
+  - 覆盖偏好数据收集、打分策略和对齐评估方法（包含对比展示）
+  - 示例工具：`utils.py` 下的评估脚本
+  - 示例 notebook: `lab9_human_align.ipynb`
+
+- **Lab 10**: 直接偏好优化（DPO）实践
+  - 实现 DPO 损失、准备偏好数据集，并对策略模型与参考模型进行小规模实验
+  - 示例 notebook: `lab10_dpo.ipynb`
+
 ### 📖 课程讲义 (Lecture)
 - 基础文本处理相关讲义
 - `01-basic_text_proc.pdf`
@@ -79,6 +92,9 @@
 - **tiktoken / tokenizers** - 分词与子词建模
 - **正则表达式 (re)** - 文本处理
 - **Jupyter Notebook** - 实验记录与结果展示
+ - **transformers** - 预训练模型与微调工具
+ - **sentencepiece** - 子词分词工具（部分预处理/训练流程使用）
+ - **tqdm** - 训练与数据处理进度条
 
 ## 📋 环境配置
 
@@ -89,7 +105,14 @@
 .\venv\Scripts\Activate.ps1
 
 # 安装必要的包
-pip install torch torchtext datasets gensim
+pip install torch torchtext datasets gensim tiktoken transformers sentencepiece tqdm
+```
+
+建议的虚拟环境创建方式：
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 ```
 
 ## 🧹 LaTeX 文档清理
@@ -127,7 +150,8 @@ CS310-Natural-Language-Processing/
 │   ├── lab6/
 │   ├── lab7/
 │   ├── lab8/
-│   └── lab9/
+│   ├── lab9/
+│   └── lab10/
 ├── lecture/
 ├── writing assignment/
 │   └── A2/
@@ -155,6 +179,7 @@ CS310-Natural-Language-Processing/
 
 ## 📅 更新日志
 
+- **2026-05-09**: 根据维护规范更新 README，更新 "Last Updated" 日期并记录本次维护。
 - **2026-04-28**: 执行 README 维护更新，更新 "Last Updated" 日期并补充维护建议与示例（参见 README_MAINTENANCE.md）
 - **2026-04-14**: 根据维护规范补充Lab 7内容，同步目录结构并更新日期
 - **2026-04-07**: 按维护规范更新 README；补充 A3 与 Lab6 内容，刷新目录结构与技术栈，更新日期
@@ -177,4 +202,4 @@ CS310-Natural-Language-Processing/
 ---
 
 **SUSTech CS310 - Natural Language Processing**  
-*Last Updated: 2026年4月28日*
+**Last Updated: 2026年5月09日**
