@@ -8,3 +8,6 @@ lab/lab8/Qwen3-0.6B-Base
 lab/lab8/dataset/dataset
 lab/lab9/hh-rlhf
 lab/lab9/j1-nano-0.6B
+lab/lab11/models/Qwen2.5-7B-Instruct-GGUF
+lab/lab11/models/Qwen3-1.7B-GGUF
+lab/lab11/llama-b9114-bin-win-cpu-x64
