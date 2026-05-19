@@ -1,0 +1,6 @@
+default:
+  - api_key: "course-nlp-2026"
+    base_url: "http://172.18.36.53:9810/v1"
+
+judge-qwen:
+  - "default"

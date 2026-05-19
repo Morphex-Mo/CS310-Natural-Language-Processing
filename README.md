@@ -77,6 +77,12 @@
 - **Lab 10**: 直接偏好优化（DPO）实践
   - 实现 DPO 损失、准备偏好数据集，并对策略模型与参考模型进行小规模实验
   - 示例 notebook: `lab10_dpo.ipynb`
+ 
+- **Lab 12**: 推理与 GRPO 实践
+  - 实验内容：基于本地 Qwen3 实现的推理与策略优化（GRPO）示例
+  - 示例 notebook: [lab/lab12/lab12_reasoning.ipynb](lab/lab12/lab12_reasoning.ipynb)
+  - 说明：本仓库在 `lab/lab12/qwen3` 下包含 tokenizer 与模型权重的示例目录（如存在）；若你将模型权重与 tokenizer 放在其他路径，请在 notebook 中将 `local_dir` 参数指向正确目录。
+  - 注意：在带有 8GB GPU 的环境下运行完整反向传播训练可能会 OOM，建议首先运行 notebook 中的 "smoke-test" 单元（已加入）或将训练改为 CPU/更小 batch 与更短的 `max_new_tokens`。
 
 ### 📖 课程讲义 (Lecture)
 - 基础文本处理相关讲义
@@ -180,6 +186,7 @@ CS310-Natural-Language-Processing/
 ## 📅 更新日志
 
 - **2026-05-09**: 根据维护规范更新 README，更新 "Last Updated" 日期并记录本次维护。
+- **2026-05-19**: README 维护更新：添加 Lab12 本地模型说明、运行/Smoke-test 建议与更新日志。
 - **2026-04-28**: 执行 README 维护更新，更新 "Last Updated" 日期并补充维护建议与示例（参见 README_MAINTENANCE.md）
 - **2026-04-14**: 根据维护规范补充Lab 7内容，同步目录结构并更新日期
 - **2026-04-07**: 按维护规范更新 README；补充 A3 与 Lab6 内容，刷新目录结构与技术栈，更新日期
@@ -202,4 +209,4 @@ CS310-Natural-Language-Processing/
 ---
 
 **SUSTech CS310 - Natural Language Processing**  
-**Last Updated: 2026年5月09日**
+**Last Updated: 2026年5月19日**
