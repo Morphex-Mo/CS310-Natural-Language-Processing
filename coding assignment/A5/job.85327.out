@@ -1,0 +1,55 @@
+当前目录: /home/xuyang_lab/cse12212752/MO/A5
+任务开始时间: Tue May 19 12:23:06 CST 2026
+运行节点: l40gpu001
+Tue May 19 12:23:06 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.08              Driver Version: 575.57.08      CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40                     On  |   00000000:C1:00.0 Off |                    0 |
+| N/A   31C    P8             35W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+CUDA_VISIBLE_DEVICES=0
+==================== 环境信息 ====================
+Python路径: /opt/ohpc/pub/apps/anaconda3/bin/python
+Python版本:
+Python 3.9.12
+
+Conda环境信息:
+Conda版本: conda 4.12.0
+当前Conda环境: base
+Conda环境路径: /opt/ohpc/pub/apps/anaconda3
+
+关键环境变量:
+PATH: /opt/ohpc/pub/apps/anaconda3/bin:/opt/ohpc/pub/libs/singularity/3.7.1/bin:/opt/ohpc/pub/mpi/libfabric/1.13.0/bin:/opt/ohpc/pub/mpi/ucx-ohpc/1.11.2/bin:/opt/ohpc/pub/libs/hwloc/bin:/opt/ohpc/pub/mpi/openmpi4-gnu9/4.1.1/bin:/opt/ohpc/pub/compiler/gcc/9.4.0/bin:/opt/ohpc/pub/utils/prun/2.2:/opt/ohpc/pub/utils/autotools/bin:/opt/ohpc/pub/bin:/home/xuyang_lab/cse12212752/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/xuyang_lab/cse12212752/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/xuyang_lab/cse12212752/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/bin/remote-cli:/usr/local/go/bin:/opt/ohpc/pub/apps/anaconda3/condabin:/home/xuyang_lab/cse12212752/.local/bin:/home/xuyang_lab/cse12212752/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/home/xuyang_lab/cse12212752/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts
+LD_LIBRARY_PATH: /opt/ohpc/pub/mpi/libfabric/1.13.0/lib:/opt/ohpc/pub/mpi/ucx-ohpc/1.11.2/lib:/opt/ohpc/pub/libs/hwloc/lib:/opt/ohpc/pub/mpi/openmpi4-gnu9/4.1.1/lib:/opt/ohpc/pub/compiler/gcc/9.4.0/lib64
+
+Python模块搜索路径:
+
+/opt/ohpc/pub/apps/anaconda3/lib/python39.zip
+/opt/ohpc/pub/apps/anaconda3/lib/python3.9
+/opt/ohpc/pub/apps/anaconda3/lib/python3.9/lib-dynload
+/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages
+/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages
+
+torch= 2.5.1+cu121
+cuda_available= True
+device_count= 1
+current_device= 0
+Device: cuda
+Traceback (most recent call last):
+  File "/home/xuyang_lab/cse12212752/MO/A5/A5/run_dpo.py", line 403, in <module>
+    with open(file_path, "r", encoding="utf-8") as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/xuyang_lab/cse12212752/MO/A5/instruction-data-with-preference.json'

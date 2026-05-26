@@ -1,0 +1,71 @@
+当前目录: /home/xuyang_lab/cse12212752/MO/A5
+任务开始时间: Tue May 19 12:24:54 CST 2026
+运行节点: l40gpu001
+Tue May 19 12:24:54 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.08              Driver Version: 575.57.08      CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40                     On  |   00000000:C1:00.0 Off |                    0 |
+| N/A   31C    P8             35W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+CUDA_VISIBLE_DEVICES=0
+==================== 环境信息 ====================
+Python路径: /opt/ohpc/pub/apps/anaconda3/bin/python
+Python版本:
+Python 3.9.12
+
+Conda环境信息:
+Conda版本: conda 4.12.0
+当前Conda环境: base
+Conda环境路径: /opt/ohpc/pub/apps/anaconda3
+
+关键环境变量:
+PATH: /opt/ohpc/pub/apps/anaconda3/bin:/opt/ohpc/pub/libs/singularity/3.7.1/bin:/opt/ohpc/pub/mpi/libfabric/1.13.0/bin:/opt/ohpc/pub/mpi/ucx-ohpc/1.11.2/bin:/opt/ohpc/pub/libs/hwloc/bin:/opt/ohpc/pub/mpi/openmpi4-gnu9/4.1.1/bin:/opt/ohpc/pub/compiler/gcc/9.4.0/bin:/opt/ohpc/pub/utils/prun/2.2:/opt/ohpc/pub/utils/autotools/bin:/opt/ohpc/pub/bin:/home/xuyang_lab/cse12212752/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/xuyang_lab/cse12212752/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/xuyang_lab/cse12212752/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/bin/remote-cli:/usr/local/go/bin:/opt/ohpc/pub/apps/anaconda3/condabin:/home/xuyang_lab/cse12212752/.local/bin:/home/xuyang_lab/cse12212752/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/home/xuyang_lab/cse12212752/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts
+LD_LIBRARY_PATH: /opt/ohpc/pub/mpi/libfabric/1.13.0/lib:/opt/ohpc/pub/mpi/ucx-ohpc/1.11.2/lib:/opt/ohpc/pub/libs/hwloc/lib:/opt/ohpc/pub/mpi/openmpi4-gnu9/4.1.1/lib:/opt/ohpc/pub/compiler/gcc/9.4.0/lib64
+
+Python模块搜索路径:
+
+/opt/ohpc/pub/apps/anaconda3/lib/python39.zip
+/opt/ohpc/pub/apps/anaconda3/lib/python3.9
+/opt/ohpc/pub/apps/anaconda3/lib/python3.9/lib-dynload
+/home/xuyang_lab/cse12212752/.local/lib/python3.9/site-packages
+/opt/ohpc/pub/apps/anaconda3/lib/python3.9/site-packages
+
+torch= 2.5.1+cu121
+cuda_available= True
+device_count= 1
+current_device= 0
+Device: cuda
+Number of entries: 1100
+/home/xuyang_lab/cse12212752/MO/A5/A5/run_dpo.py:445: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  sft_state_dict = torch.load(sft_model_path, map_location=device)
+Pretrained model loaded.
+Ep 1 (Step 000000): Train loss 0.693, Train chosen reward 0.032, Train rejected reward 0.021, Val loss 0.693, Val chosen reward 0.020, Val rejected reward 0.018
+Ep 1 (Step 000010): Train loss 0.689, Train chosen reward -0.575, Train rejected reward -0.670, Val loss 0.690, Val chosen reward -0.565, Val rejected reward -0.632
+Ep 1 (Step 000020): Train loss 0.682, Train chosen reward -0.732, Train rejected reward -0.956, Val loss 0.686, Val chosen reward -0.738, Val rejected reward -0.880
+Ep 1 (Step 000030): Train loss 0.666, Train chosen reward -0.705, Train rejected reward -1.274, Val loss 0.682, Val chosen reward -0.828, Val rejected reward -1.069
+Ep 1 (Step 000040): Train loss 0.664, Train chosen reward -0.914, Train rejected reward -1.543, Val loss 0.675, Val chosen reward -1.048, Val rejected reward -1.428
+Ep 1 (Step 000050): Train loss 0.639, Train chosen reward -1.146, Train rejected reward -2.334, Val loss 0.664, Val chosen reward -1.355, Val rejected reward -2.000
+Ep 1 (Step 000060): Train loss 0.650, Train chosen reward -1.537, Train rejected reward -2.540, Val loss 0.653, Val chosen reward -1.852, Val rejected reward -2.742
+Ep 1 (Step 000070): Train loss 0.615, Train chosen reward -1.794, Train rejected reward -3.619, Val loss 0.643, Val chosen reward -2.149, Val rejected reward -3.265
+Ep 1 (Step 000080): Train loss 0.596, Train chosen reward -2.221, Train rejected reward -4.473, Val loss 0.637, Val chosen reward -2.537, Val rejected reward -3.799
+Ep 1 (Step 000090): Train loss 0.593, Train chosen reward -2.843, Train rejected reward -5.166, Val loss 0.629, Val chosen reward -3.195, Val rejected reward -4.646
+Ep 1 (Step 000100): Train loss 0.577, Train chosen reward -2.974, Train rejected reward -5.746, Val loss 0.623, Val chosen reward -3.242, Val rejected reward -4.865
+Ep 1 (Step 000110): Train loss 0.565, Train chosen reward -3.225, Train rejected reward -6.313, Val loss 0.615, Val chosen reward -3.748, Val rejected reward -5.559
+Training completed in 0.91 minutes.
+Saved policy model to gpt2-medium355M-dpo.pth
+Saved training curves to dpo_training_loss.png and dpo_reward_margin.png
+python: can't open file '/home/xuyang_lab/cse12212752/MO/A5/generate_dpo_responses.py': [Errno 2] No such file or directory
