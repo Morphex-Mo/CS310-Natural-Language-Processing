@@ -26,6 +26,11 @@
   - 包含用于微调/评估的大模型权重与脚本
   - 示例文件位于 `coding assignment/A4/`
 
+- **A5**: 偏好优化与DPO实验
+  - 涵盖直接偏好优化（DPO）相关实验和评估方法
+  - 包含指令数据与偏好数据集处理：`instruction-data-with-preference.json`、`generate_dpo_responses.py`、`run_dpo.py`
+  - 评估与对齐：`alpaca_eval.json`、`model_outputs.json`
+
 ### 🧪 实验课 (Lab)
 - **Lab 1**: Python基础文本处理
   - 文本清洗与预处理
@@ -78,15 +83,29 @@
   - 实现 DPO 损失、准备偏好数据集，并对策略模型与参考模型进行小规模实验
   - 示例 notebook: `lab10_dpo.ipynb`
  
+- **Lab 11**: Prompt工程与MMLU评估
+  - 实验内容：基于MMLU数据集的Prompt工程与模型评估
+  - 示例 notebook: `lab11_prompt.ipynb`
+  - 数据集：MMLU ID/OOD测试、训练与提示数据
+
 - **Lab 12**: 推理与 GRPO 实践
   - 实验内容：基于本地 Qwen3 实现的推理与策略优化（GRPO）示例
   - 示例 notebook: [lab/lab12/lab12_reasoning.ipynb](lab/lab12/lab12_reasoning.ipynb)
   - 说明：本仓库在 `lab/lab12/qwen3` 下包含 tokenizer 与模型权重的示例目录（如存在）；若你将模型权重与 tokenizer 放在其他路径，请在 notebook 中将 `local_dir` 参数指向正确目录。
   - 注意：在带有 8GB GPU 的环境下运行完整反向传播训练可能会 OOM，建议首先运行 notebook 中的 "smoke-test" 单元（已加入）或将训练改为 CPU/更小 batch 与更短的 `max_new_tokens`。
 
+- **Lab 13**: Agent实践
+  - 实验内容：基于大模型的智能体设计与实现
+  - 示例 notebook: `lab13_agent.ipynb`
+
 ### 📖 课程讲义 (Lecture)
 - 基础文本处理相关讲义
 - `01-basic_text_proc.pdf`
+
+### 📋 项目模板 (Project)
+- 课程项目模板与报告格式
+- `Template-2026/`: ACL会议论文模板与格式规范
+- `report-material/`: 项目报告撰写指导材料
 
 ## 🛠️ 技术栈
 
@@ -146,7 +165,8 @@ CS310-Natural-Language-Processing/
 │   ├── A1/
 │   ├── A2/
 │   ├── A3/
-│   └── A4/
+│   ├── A4/
+│   └── A5/
 ├── lab/
 │   ├── lab1/
 │   ├── lab2/
@@ -157,11 +177,16 @@ CS310-Natural-Language-Processing/
 │   ├── lab7/
 │   ├── lab8/
 │   ├── lab9/
-│   └── lab10/
+│   ├── lab10/
+│   ├── lab11/
+│   ├── lab12/
+│   └── lab13/
 ├── lecture/
+├── proj/
+│   ├── Template-2026/
+│   └── report-material/
 ├── writing assignment/
 │   └── A2/
-├── proj/
 ├── .vscode/
 ├── .venv/
 ├── README_MAINTENANCE.md
@@ -185,8 +210,9 @@ CS310-Natural-Language-Processing/
 
 ## 📅 更新日志
 
-- **2026-05-09**: 根据维护规范更新 README，更新 "Last Updated" 日期并记录本次维护。
+- **2026-06-08**: 根据最新目录结构更新 README，添加 A5 作业、Lab 11 和 Lab 13 的内容，更新目录结构图
 - **2026-05-19**: README 维护更新：添加 Lab12 本地模型说明、运行/Smoke-test 建议与更新日志。
+- **2026-05-09**: 根据维护规范更新 README，更新 "Last Updated" 日期并记录本次维护。
 - **2026-04-28**: 执行 README 维护更新，更新 "Last Updated" 日期并补充维护建议与示例（参见 README_MAINTENANCE.md）
 - **2026-04-14**: 根据维护规范补充Lab 7内容，同步目录结构并更新日期
 - **2026-04-07**: 按维护规范更新 README；补充 A3 与 Lab6 内容，刷新目录结构与技术栈，更新日期
@@ -209,4 +235,4 @@ CS310-Natural-Language-Processing/
 ---
 
 **SUSTech CS310 - Natural Language Processing**  
-**Last Updated: 2026年5月19日**
+**Last Updated: 2026年6月8日**
